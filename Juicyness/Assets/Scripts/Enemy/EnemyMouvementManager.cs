@@ -1,15 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyMouvementManager : MonoBehaviour
 {
     public List<GameObject> enemies;
+    private bool moveLeft = true;
+    [SerializeField] private float speed = 100.0f;
     public float boundaryLeft = -5;
     public float boundaryRight = 5;
-    [SerializeField] private bool moveLeft = true;
-    [SerializeField] private float speed = 100.0f;
     [SerializeField] private float goDownStep = 0.5f;
+    public float LineEnemyValue = 5;
     private Vector3 moveDir;
     private EnemyManager enemyManager;
 

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
@@ -26,6 +24,7 @@ public class Bullet : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Enemy"))
         {
+            ScoreManager.instance.ChangeScore(collision.GetComponent<Enemy>().enemyValue);
             collision.GetComponent<Enemy>().Die();
         }
         Destroy(this.gameObject);

@@ -1,16 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
     private EnemyMouvementManager mouvementManager;
+    [HideInInspector] public float enemyValue;
 
     // Start is called before the first frame update
     void Start()
     {
         mouvementManager = transform.parent.GetComponent<EnemyMouvementManager>();
         mouvementManager.enemies.Add(gameObject);
+        enemyValue = mouvementManager.LineEnemyValue;
     }
 
     // Update is called once per frame
