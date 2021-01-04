@@ -16,13 +16,22 @@ public class SpaceShipMouvement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetAxis("Horizontal") > 0)
+        if(Input.GetAxis("Horizontal") > 0.1f)
         {
             transform.position += Vector3.right * speed * Time.deltaTime;
         }
-        else if (Input.GetAxis("Horizontal") < 0)
+        else if (Input.GetAxis("Horizontal") < -0.1f)
         {
             transform.position -= Vector3.right * speed * Time.deltaTime;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            GameManager.instance.ChangeState(State.LOOSE);
+            Destroy(gameObject);
         }
     }
 }

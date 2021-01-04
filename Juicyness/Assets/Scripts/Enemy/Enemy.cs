@@ -22,10 +22,12 @@ public class Enemy : MonoBehaviour
     {
         if (transform.position.x < mouvementManager.boundaryLeft)
         {
+            EnemyManager.instance.canGoDown = true;
             EnemyManager.instance.EveryEnemyHasToChangeDirection(true);
         }
         else if (transform.position.x > mouvementManager.boundaryRight)
         {
+            EnemyManager.instance.canGoDown = true;
             EnemyManager.instance.EveryEnemyHasToChangeDirection(false);
         }
     }
@@ -33,6 +35,7 @@ public class Enemy : MonoBehaviour
     public void Die()
     {
         mouvementManager.enemies.Remove(gameObject);
+        mouvementManager.CheckIfNoMoreEnemies();
         Destroy(this.gameObject);
     }
 }

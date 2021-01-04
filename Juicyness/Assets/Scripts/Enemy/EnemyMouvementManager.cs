@@ -57,4 +57,12 @@ public class EnemyMouvementManager : MonoBehaviour
             enemyLine.transform.position = new Vector3(enemyLine.transform.position.x, enemyLine.transform.position.y - goDownStep, enemyLine.transform.position.z);
         }
     }
+
+    public void CheckIfNoMoreEnemies()
+    {
+        if (enemies.Count == 0)
+        {
+            GameManager.instance.RemoveALine();
+        }
+    }
 }

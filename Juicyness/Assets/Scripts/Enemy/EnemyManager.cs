@@ -6,6 +6,7 @@ public class EnemyManager : MonoBehaviour
 {
     public static EnemyManager instance;
     public List<EnemyMouvementManager> enemiesMouvementManager;
+    public bool canGoDown = true;
 
     private void Awake()
     {
@@ -22,7 +23,7 @@ public class EnemyManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameManager.instance.numberOfEnemyLines = enemiesMouvementManager.Count;
     }
 
     // Update is called once per frame
@@ -33,9 +34,13 @@ public class EnemyManager : MonoBehaviour
 
     public void EveryEnemyHasToChangeDirection(bool shouldGoLeft)
     {
-        foreach (EnemyMouvementManager enemyMouvMan in enemiesMouvementManager)
+        if (canGoDown)
         {
-            enemyMouvMan.ChangeDirection(shouldGoLeft);
+            canGoDown = false;
+            foreach (EnemyMouvementManager enemyMouvMan in enemiesMouvementManager)
+            {
+                enemyMouvMan.ChangeDirection(shouldGoLeft);
+            }
         }
     }
 }
