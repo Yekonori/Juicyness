@@ -5,18 +5,16 @@ using UnityEngine;
 public class EnemyManager : MonoBehaviour
 {
     public static EnemyManager instance;
-    public List<EnemyMouvementManager> enemiesMouvementManager;
+    public List<EnemyMouvementManager> enemiesMouvementManager = new List<EnemyMouvementManager>();
     public bool canGoDown = true;
 
     private void Awake()
     {
-        enemiesMouvementManager = new List<EnemyMouvementManager>();
         if (instance != null && instance != this)
         {
             Destroy(gameObject);
             return;
         }
-
         instance = this;
     }
 
@@ -29,7 +27,7 @@ public class EnemyManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void EveryEnemyHasToChangeDirection(bool shouldGoLeft)

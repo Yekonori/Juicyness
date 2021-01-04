@@ -16,8 +16,12 @@ public class EnemyMouvementManager : MonoBehaviour
     private void Awake()
     {
         enemies = new List<GameObject>();
-        enemyManager = EnemyManager.instance;
+        enemyManager = transform.parent.GetComponent<EnemyManager>();
         enemyManager.enemiesMouvementManager.Add(this);
+    }
+    private void Start()
+    {
+
     }
 
     void Update()
