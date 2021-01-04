@@ -6,6 +6,8 @@ public class EnemyMouvementManager : MonoBehaviour
     public List<GameObject> enemies;
     private bool moveLeft = true;
     [SerializeField] private float speed = 100.0f;
+    public float minShootTime = 2;
+    public float maxShootTime = 5;
     public float boundaryLeft = -5;
     public float boundaryRight = 5;
     [SerializeField] private float goDownStep = 0.5f;

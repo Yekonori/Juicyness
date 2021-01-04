@@ -2,7 +2,7 @@
 
 public class Bullet : MonoBehaviour
 {
-
+    [SerializeField] private bool isEnemyBullet = false;
     [SerializeField] private float speed = 3;
 
     // Start is called before the first frame update
@@ -18,14 +18,24 @@ public class Bullet : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (!isEnemyBullet)
         {
-            return;
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                return;
+            }
+            else if (collision.gameObject.CompareTag("Enemy"))
+            {
+                ScoreManager.instance.ChangeScore(collision.GetComponent<Enemy>().enemyValue);
+                collision.GetComponent<Enemy>().Die();
+            }
         }
-        else if (collision.gameObject.CompareTag("Enemy"))
+        else
         {
-            ScoreManager.instance.ChangeScore(collision.GetComponent<Enemy>().enemyValue);
-            collision.GetComponent<Enemy>().Die();
+            if (collision.gameObject.CompareTag("Enemy"))
+            {
+                return;
+            }
         }
         Destroy(this.gameObject);
     }
