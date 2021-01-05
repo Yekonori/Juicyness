@@ -9,6 +9,9 @@ public class SpaceShipShot : MonoBehaviour
     private GameObject bulletPrefab;
     [SerializeField]
     private Transform bulletSpawner;
+    [SerializeField]
+    private float timeBetweenBullet = 0.5f;
+    private bool canShoot = true;
 
     // Start is called before the first frame update
     void Start()
@@ -19,9 +22,17 @@ public class SpaceShipShot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && canShoot)
         {
+            canShoot = false;
             Instantiate(bulletPrefab, bulletSpawner.position, Quaternion.identity);
+            StartCoroutine(WaitBeforeShootingAgain());
         }
+    }
+
+    IEnumerator WaitBeforeShootingAgain()
+    {
+        yield return new WaitForSeconds(timeBetweenBullet);
+        canShoot = true;
     }
 }
