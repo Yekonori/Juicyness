@@ -75,7 +75,6 @@ public class FeatureManager : MonoBehaviour
                         print("Eigth feature");
                         break;
                     default:
-                        Debug.Log("Pressed char: " + Input.inputString);
                         break;
                 }
             }

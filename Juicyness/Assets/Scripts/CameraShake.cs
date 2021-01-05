@@ -64,14 +64,10 @@ public class CameraShake : MonoBehaviour
 	}
 
 	public void ShakeCamera(float thisShakeDuration, float thisShakeAmount)
-    {
-		if (FeatureManager.instance.isCameraEffectsOn)
-		{
-			canShake = true;
-			currentShakeDuration = thisShakeDuration;
-			shakeAmount = thisShakeAmount;
-		}
-
+	{
+		canShake = true;
+		currentShakeDuration = thisShakeDuration;
+		shakeAmount = thisShakeAmount;
 	}
 
 }
