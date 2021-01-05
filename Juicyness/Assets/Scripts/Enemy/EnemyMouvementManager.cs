@@ -71,4 +71,9 @@ public class EnemyMouvementManager : MonoBehaviour
             GameManager.instance.RemoveALine();
         }
     }
+
+    public void AddSpeed(float speedToAdd)
+    {
+        speed += speedToAdd;
+    }
 }

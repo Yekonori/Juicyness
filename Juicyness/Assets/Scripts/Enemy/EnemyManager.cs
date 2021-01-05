@@ -8,6 +8,8 @@ public class EnemyManager : MonoBehaviour
     public List<EnemyMouvementManager> enemiesMouvementManager = new List<EnemyMouvementManager>();
     public bool canGoDown = true;
 
+    public float increaseSpeed = 0.5f;
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -39,6 +41,18 @@ public class EnemyManager : MonoBehaviour
             {
                 enemyMouvMan.ChangeDirection(shouldGoLeft);
             }
+
+            Debug.Log("Ajout du son de claquement des dents ici");
+
+            IncreaseEnemySpeed();
+        }
+    }
+
+    private void IncreaseEnemySpeed()
+    {
+        foreach (EnemyMouvementManager enemyMouvMan in enemiesMouvementManager)
+        {
+            enemyMouvMan.AddSpeed(increaseSpeed);
         }
     }
 }
