@@ -1,16 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class SpaceShipMouvement : MonoBehaviour
 {
 
     [SerializeField] private float speed = 2;
+    [SerializeField] private float life = 3;
+    [SerializeField] private Text lifeText;
 
     // Start is called before the first frame update
     void Start()
     {
         GameManager.instance.SetPlayer(gameObject);
+        lifeText.text = "Life : " + life;
     }
 
     // Update is called once per frame
@@ -30,8 +32,14 @@ public class SpaceShipMouvement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            GameManager.instance.ChangeState(State.LOOSE);
-            Destroy(gameObject);
+            life--;
+            lifeText.text = "Life : " + life;
+            if (life <= 0)
+            {
+                GameManager.instance.ChangeState(State.LOOSE);
+                Destroy(gameObject);
+            }
+            //TODO ELSE FEEDBACK, INVINCIBILITY ?????
         }
     }
 }
