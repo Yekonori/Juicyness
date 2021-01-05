@@ -10,6 +10,12 @@ public class FeatureManager : MonoBehaviour
     private bool isPlayerBlack = false;
     private bool areEnemiesBlack = false;
     [HideInInspector] public bool isCameraEffectsOn = false;
+    [HideInInspector] public bool isCameraTilted = false;
+    [Header("Camera Settings")]
+    [SerializeField] private Vector3 cameraBasePosition;
+    [SerializeField] private Vector3 cameraBaseRotation;
+    [SerializeField] private Vector3 cameraTiltedPosition;
+    [SerializeField] private Vector3 cameraTiltedRotation;
 
     private void Awake()
     {
@@ -73,6 +79,7 @@ public class FeatureManager : MonoBehaviour
                     case "8":
                     case "_":
                         print("Eigth feature");
+                        ToggleCameraTiltingEffect();
                         break;
                     default:
                         break;
@@ -124,6 +131,21 @@ public class FeatureManager : MonoBehaviour
     public void ToggleCameraEffects()
     {
         isCameraEffectsOn = !isCameraEffectsOn;
+    }
+
+    public void ToggleCameraTiltingEffect()
+    {
+        isCameraTilted = !isCameraTilted;
+        if (isCameraTilted)
+        {
+            Camera.main.transform.position = cameraTiltedPosition;
+            Camera.main.transform.rotation = Quaternion.Euler(cameraTiltedRotation);
+        }
+        else
+        {
+            Camera.main.transform.position = cameraBasePosition;
+            Camera.main.transform.rotation = Quaternion.Euler(cameraBaseRotation);
+        }
     }
 
 }

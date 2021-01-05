@@ -2378,6 +2378,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isCameraEffectsOn: 0
+  isCameraTilted: 0
+  cameraBasePosition: {x: 0, y: 0, z: -10}
+  cameraBaseRotation: {x: 0, y: 0, z: 0}
+  cameraTiltedPosition: {x: 0, y: -5.8, z: -5}
+  cameraTiltedRotation: {x: -40, y: 0, z: 0}
 --- !u!1 &1706269957
 GameObject:
   m_ObjectHideFlags: 0
