@@ -203,7 +203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemiesMouvementManager: []
   canGoDown: 1
-  increaseSpeed: 0.5
+  increaseSpeed: 0.1
 --- !u!1001 &252467670
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2300,6 +2300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49644a6ffacacc14483b7bb9ff24878d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isCameraEffectsOn: 0
 --- !u!1 &1706269957
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,9 +4,23 @@ using UnityEngine;
 
 public class FeatureManager : MonoBehaviour
 {
+    public static FeatureManager instance;
+
     private GameObject player;
     private bool isPlayerBlack = false;
     private bool areEnemiesBlack = false;
+    [HideInInspector] public bool isCameraEffectsOn = false;
+
+    private void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        instance = this;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +62,7 @@ public class FeatureManager : MonoBehaviour
                 case "6":
                 case "-":
                     print("Sixth feature");
+                    ToggleCameraEffects();
                     break;
                 case "7":
                 case "è":
@@ -102,6 +117,11 @@ public class FeatureManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void ToggleCameraEffects()
+    {
+        isCameraEffectsOn = !isCameraEffectsOn;
     }
 
 }
