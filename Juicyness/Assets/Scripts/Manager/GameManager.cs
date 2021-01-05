@@ -14,7 +14,9 @@ public class GameManager : MonoBehaviour
 
     public State state;
     public System.Action onStateChange;
+    public System.Action onPlayerAssigned;
 
+    [HideInInspector] public GameObject player;
     [HideInInspector] public float numberOfEnemyLines = 0;
 
     private void Awake()
@@ -53,6 +55,12 @@ public class GameManager : MonoBehaviour
         {
             ChangeState(State.WIN);
         }
+    }
+
+    public void SetPlayer(GameObject newPlayer)
+    {
+        player = newPlayer;
+        if (onPlayerAssigned != null) onPlayerAssigned.Invoke();
     }
 
 }

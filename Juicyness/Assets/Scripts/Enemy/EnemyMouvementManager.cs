@@ -38,18 +38,18 @@ public class EnemyMouvementManager : MonoBehaviour
         {
             moveDir = new Vector3(1.0f, 0.0f, 0.0f);
 
-            foreach (GameObject enemyLine in enemies)
+            foreach (GameObject enemy in enemies)
             {
-                enemyLine.transform.Translate(moveDir * Time.deltaTime * speed, Space.World);
+                enemy.transform.Translate(moveDir * Time.deltaTime * speed, Space.World);
             }
         }
         else
         {
             moveDir = new Vector3(-1.0f, 0.0f, 0.0f);
 
-            foreach (GameObject enemyLine in enemies)
+            foreach (GameObject enemy in enemies)
             {
-                enemyLine.transform.Translate(moveDir * Time.deltaTime * speed, Space.World);
+                enemy.transform.Translate(moveDir * Time.deltaTime * speed, Space.World);
             }
         }
     }
