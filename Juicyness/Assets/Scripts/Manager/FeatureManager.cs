@@ -11,6 +11,8 @@ public class FeatureManager : MonoBehaviour
     private bool areEnemiesBlack = false;
     [HideInInspector] public bool isCameraEffectsOn = false;
     [HideInInspector] public bool isCameraTilted = false;
+
+    public System.Action onCameraTiltedToggle;
     [Header("Camera Settings")]
     [SerializeField] private Vector3 cameraBasePosition;
     [SerializeField] private Vector3 cameraBaseRotation;
@@ -136,16 +138,7 @@ public class FeatureManager : MonoBehaviour
     public void ToggleCameraTiltingEffect()
     {
         isCameraTilted = !isCameraTilted;
-        if (isCameraTilted)
-        {
-            Camera.main.transform.position = cameraTiltedPosition;
-            Camera.main.transform.rotation = Quaternion.Euler(cameraTiltedRotation);
-        }
-        else
-        {
-            Camera.main.transform.position = cameraBasePosition;
-            Camera.main.transform.rotation = Quaternion.Euler(cameraBaseRotation);
-        }
+        if (onCameraTiltedToggle != null) onCameraTiltedToggle.Invoke();
     }
 
 }

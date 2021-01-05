@@ -735,7 +735,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 4468019958494447244, guid: e1118f0c65c0b69489478ed13a3e5727,
     type: 3}
   bulletSpawner: {fileID: 1663392077}
-  timeBetweenBullet: 0.5
+  timeBetweenBullet: 0
 --- !u!114 &521761326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2395,6 +2395,7 @@ GameObject:
   - component: {fileID: 1706269959}
   - component: {fileID: 1706269958}
   - component: {fileID: 1706269961}
+  - component: {fileID: 1706269962}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2480,6 +2481,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   decreaseFactor: 1
+--- !u!114 &1706269962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1706269957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66cf8ad1b18f0104a986325866bf8f91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraBasePosition: {x: 0, y: 0, z: -10}
+  cameraBaseRotation: {x: 0, y: 0, z: 0}
+  cameraTiltedPosition: {x: 0, y: -5.8, z: -5}
+  cameraTiltedRotation: {x: -40, y: 0, z: 0}
+  timeForCameraTotravel: 3
 --- !u!1 &1716318899
 GameObject:
   m_ObjectHideFlags: 0

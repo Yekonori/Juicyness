@@ -66,7 +66,15 @@ public class GameManager : MonoBehaviour
         numberOfEnemyLines--;
         if(numberOfEnemyLines == 0)
         {
-            ChangeState(State.WIN);
+            if (!FeatureManager.instance.isCameraEffectsOn)
+            {
+                ChangeState(State.WIN);
+            }
+            else
+            {
+                canPlay = false;
+                Camera.main.GetComponent<CameraMouvement>().SetUpVictoryPosition();
+            }
         }
     }
 
