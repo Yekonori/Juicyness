@@ -36,8 +36,13 @@ public class SpaceShipMouvement : MonoBehaviour
             lifeText.text = "Life : " + life;
             if (life <= 0)
             {
+                Camera.main.GetComponent<CameraShake>().ShakeCamera(0.3f, 0.8f);
                 GameManager.instance.ChangeState(State.LOOSE);
                 Destroy(gameObject);
+            }
+            else
+            {
+                Camera.main.GetComponent<CameraShake>().ShakeCamera(0.2f, 0.1f);
             }
             //TODO ELSE FEEDBACK, INVINCIBILITY ?????
         }
