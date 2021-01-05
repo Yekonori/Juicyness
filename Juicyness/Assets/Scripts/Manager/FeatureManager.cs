@@ -34,47 +34,50 @@ public class FeatureManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.anyKeyDown)
+        if (GameManager.instance.canPlay)
         {
-            string input = Input.inputString;
-            switch (input)
+            if (Input.anyKeyDown)
             {
-                case "1":
-                case "&":
-                    PlayerBecomesBlack();
-                    break;
-                case "2":
-                case "é":
-                    EnemiesBecomeBlack();
-                    break;
-                case "3":
-                case @"""":
-                    print("Third feature");
-                    break;
-                case "4":
-                case "'":
-                    print("Fourth feature");
-                    break;
-                case "5":
-                case "(":
-                    print("Fifth feature");
-                    break;
-                case "6":
-                case "-":
-                    print("Sixth feature");
-                    ToggleCameraEffects();
-                    break;
-                case "7":
-                case "è":
-                    print("Seventh feature");
-                    break;
-                case "8":
-                case "_":
-                    print("Eigth feature");
-                    break;
-                default:
-                    Debug.Log("Pressed char: " + Input.inputString);
-                    break;
+                string input = Input.inputString;
+                switch (input)
+                {
+                    case "1":
+                    case "&":
+                        PlayerBecomesBlack();
+                        break;
+                    case "2":
+                    case "é":
+                        EnemiesBecomeBlack();
+                        break;
+                    case "3":
+                    case @"""":
+                        print("Third feature");
+                        break;
+                    case "4":
+                    case "'":
+                        print("Fourth feature");
+                        break;
+                    case "5":
+                    case "(":
+                        print("Fifth feature");
+                        break;
+                    case "6":
+                    case "-":
+                        print("Sixth feature");
+                        ToggleCameraEffects();
+                        break;
+                    case "7":
+                    case "è":
+                        print("Seventh feature");
+                        break;
+                    case "8":
+                    case "_":
+                        print("Eigth feature");
+                        break;
+                    default:
+                        Debug.Log("Pressed char: " + Input.inputString);
+                        break;
+                }
             }
         }
     }

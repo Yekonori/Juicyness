@@ -28,28 +28,31 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CheckBoundary();
-        if (canCheckIfCanShoot)
+        if (GameManager.instance.canPlay)
         {
-            RaycastHit2D hit = Physics2D.Raycast(bulletSpawner.position - new Vector3(0, 0.2f, 0), -Vector2.up);
-
-            if (hit.collider != null)
+            CheckBoundary();
+            if (canCheckIfCanShoot)
             {
-                if (!hit.collider.gameObject.CompareTag("Enemy"))
+                RaycastHit2D hit = Physics2D.Raycast(bulletSpawner.position - new Vector3(0, 0.2f, 0), -Vector2.up);
+
+                if (hit.collider != null)
+                {
+                    if (!hit.collider.gameObject.CompareTag("Enemy"))
+                    {
+                        canShoot = true;
+                    }
+                }
+                else
                 {
                     canShoot = true;
                 }
             }
-            else
+            if (canShoot)
             {
-                canShoot = true;
+                canCheckIfCanShoot = false;
+                canShoot = false;
+                StartCoroutine(WaitAndShoot());
             }
-        }
-        if (canShoot)
-        {
-            canCheckIfCanShoot = false;
-            canShoot = false;
-            StartCoroutine(WaitAndShoot());
         }
     }
     private void CheckBoundary()

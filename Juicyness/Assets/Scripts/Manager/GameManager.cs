@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     public System.Action onStateChange;
     public System.Action onPlayerAssigned;
 
+    public bool canPlay;
+
     [HideInInspector] public GameObject player;
     [HideInInspector] public float numberOfEnemyLines = 0;
 
@@ -33,6 +35,17 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        onStateChange += () =>
+        {
+            if(state == State.INGAME)
+            {
+                canPlay = true;
+            }
+            else
+            {
+                canPlay = false;
+            }
+        };
         ChangeState(State.INGAME);
     }
 

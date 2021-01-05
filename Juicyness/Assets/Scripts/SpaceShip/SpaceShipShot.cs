@@ -22,11 +22,14 @@ public class SpaceShipShot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && canShoot)
+        if (GameManager.instance.canPlay)
         {
-            canShoot = false;
-            Instantiate(bulletPrefab, bulletSpawner.position, Quaternion.identity);
-            StartCoroutine(WaitBeforeShootingAgain());
+            if (Input.GetMouseButtonDown(0) && canShoot)
+            {
+                canShoot = false;
+                Instantiate(bulletPrefab, bulletSpawner.position, Quaternion.identity);
+                StartCoroutine(WaitBeforeShootingAgain());
+            }
         }
     }
 

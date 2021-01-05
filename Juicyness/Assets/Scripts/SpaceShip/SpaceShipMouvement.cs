@@ -18,13 +18,16 @@ public class SpaceShipMouvement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetAxis("Horizontal") > 0.1f)
+        if (GameManager.instance.canPlay)
         {
-            transform.position += Vector3.right * speed * Time.deltaTime;
-        }
-        else if (Input.GetAxis("Horizontal") < -0.1f)
-        {
-            transform.position -= Vector3.right * speed * Time.deltaTime;
+            if (Input.GetAxis("Horizontal") > 0.1f)
+            {
+                transform.position += Vector3.right * speed * Time.deltaTime;
+            }
+            else if (Input.GetAxis("Horizontal") < -0.1f)
+            {
+                transform.position -= Vector3.right * speed * Time.deltaTime;
+            }
         }
     }
 
@@ -37,7 +40,7 @@ public class SpaceShipMouvement : MonoBehaviour
             if (life <= 0)
             {
                 Camera.main.GetComponent<CameraShake>().ShakeCamera(0.3f, 0.8f);
-                GameManager.instance.ChangeState(State.LOOSE);
+                GameManager.instance.canPlay = false;
                 Destroy(gameObject);
             }
             else

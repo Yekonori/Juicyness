@@ -28,7 +28,10 @@ public class EnemyMouvementManager : MonoBehaviour
 
     void Update()
     {
-        Move();
+        if (GameManager.instance.canPlay)
+        {
+            Move();
+        }
     }
 
     // Moves the line of enemies left / right

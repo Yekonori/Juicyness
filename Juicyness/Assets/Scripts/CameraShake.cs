@@ -55,6 +55,10 @@ public class CameraShake : MonoBehaviour
 				canShake = false;
 				currentShakeDuration = 0f;
 				camTransform.localPosition = originalPos;
+				if (!GameManager.instance.canPlay)
+				{
+					GameManager.instance.ChangeState(State.LOOSE);
+				}
 			}
 		}
 	}
