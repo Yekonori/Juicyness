@@ -14,10 +14,12 @@ public class SpaceShipShot : MonoBehaviour
     private bool canShoot = true;
     [SerializeField] private GameObject particleObject;
 
+    private Animator Animator;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        Animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -28,11 +30,15 @@ public class SpaceShipShot : MonoBehaviour
             if (Input.GetMouseButtonDown(0) && canShoot)
             {
                 canShoot = false;
+
+                Animator.SetBool("IsShooting", true);
+
                 if (FeatureManager.instance.isParticleEffectsOn)
                 {
                     particleObject.SetActive(false);
                     particleObject.SetActive(true);
                 }
+
                 Instantiate(bulletPrefab, bulletSpawner.position, Quaternion.identity);
                 StartCoroutine(WaitBeforeShootingAgain());
             }
@@ -43,5 +49,6 @@ public class SpaceShipShot : MonoBehaviour
     {
         yield return new WaitForSeconds(timeBetweenBullet);
         canShoot = true;
+        Animator.SetBool("IsShooting", false);
     }
 }
