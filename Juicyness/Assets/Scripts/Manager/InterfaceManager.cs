@@ -9,9 +9,12 @@ public class InterfaceManager : MonoBehaviour
     [SerializeField] private GameObject gamePanel;
     [SerializeField] private GameObject winPanel;
     [SerializeField] private GameObject loosePanel;
-    [Header("DamageEffect")]
+    [Header("DangerEffect")]
     [SerializeField] private Image damageEffect;
-    [SerializeField] private float timeForDamageEffectToDisappear = 5;
+    [SerializeField] private float timeForDamageEffectToDisappear = 0.25f;
+    [Header("DangerEffect")]
+    [SerializeField] private Image dangerEffect;
+    [SerializeField] private float timeForDangerEffectToDisappear = 5;
     private float damageEffectLerpTimer = 0;
     private Color damageEffectBaseColor;
     private Color damageEffectfullAlphaColor;
@@ -48,7 +51,7 @@ public class InterfaceManager : MonoBehaviour
         GoToGame();
         damageEffectBaseColor = damageEffect.color;
         damageEffectfullAlphaColor = damageEffectBaseColor;
-        damageEffectfullAlphaColor.a = 1;
+        damageEffectfullAlphaColor.a = 0.35f;
     }
 
     // Update is called once per frame
@@ -91,6 +94,13 @@ public class InterfaceManager : MonoBehaviour
         damageEffectLerpTimer = 0;
         damageEffect.color = damageEffectfullAlphaColor;
         canLerpDamagerEffect = true;
+    }
+
+    public void ActivateDangerEffect()
+    {
+        //damageEffectLerpTimer = 0;
+        //dangerEffect.color = damageEffectfullAlphaColor;
+        //canLerpDamagerEffect = true;
     }
 
 }
