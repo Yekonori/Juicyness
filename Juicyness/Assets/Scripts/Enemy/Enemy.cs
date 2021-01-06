@@ -15,6 +15,9 @@ public class Enemy : MonoBehaviour
     private bool canShoot = false;
     private bool canCheckIfCanShoot = true;
 
+    private float enemyWidth;
+    private Vector3 screenBounds;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +26,8 @@ public class Enemy : MonoBehaviour
         enemyValue = mouvementManager.LineEnemyValue;
         minShootTime = mouvementManager.minShootTime;
         maxShootTime = mouvementManager.maxShootTime;
+        enemyWidth = GetComponent<SpriteRenderer>().bounds.size.x;
+        screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
     }
 
     // Update is called once per frame
@@ -57,14 +62,12 @@ public class Enemy : MonoBehaviour
     }
     private void CheckBoundary()
     {
-        if (transform.position.x < mouvementManager.boundaryLeft)
+        if (transform.position.x < screenBounds.x + enemyWidth)
         {
-            EnemyManager.instance.canGoDown = true;
             EnemyManager.instance.EveryEnemyHasToChangeDirection(true);
         }
-        else if (transform.position.x > mouvementManager.boundaryRight)
+        else if (transform.position.x > -screenBounds.x - enemyWidth)
         {
-            EnemyManager.instance.canGoDown = true;
             EnemyManager.instance.EveryEnemyHasToChangeDirection(false);
         }
     }
