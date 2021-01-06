@@ -14,6 +14,7 @@ public class FeatureManager : MonoBehaviour
     [HideInInspector] public bool isParticleEffectsOn = false;
     [HideInInspector] public bool isSoundEffectOn = false;
     [HideInInspector] public bool isUIEffecstOn = false;
+    [HideInInspector] public bool isMusicOn = false;
 
     public System.Action onCameraTiltedToggle;
     public System.Action onUIEffectsToggle;
@@ -74,7 +75,8 @@ public class FeatureManager : MonoBehaviour
                         break;
                     case "5":
                     case "(":
-                        print("Fifth feature");
+                        print("Fifth feature : Music");
+                        ToggleMusic();
                         break;
                     case "6":
                     case "-":
@@ -137,6 +139,19 @@ public class FeatureManager : MonoBehaviour
     {
         isUIEffecstOn = !isUIEffecstOn;
         if (onUIEffectsToggle != null) onUIEffectsToggle.Invoke();
+    }
+
+    public void ToggleMusic()
+    {
+        isMusicOn = !isMusicOn;
+        if (isMusicOn)
+        {
+            AudioManager.instance.PlayMusic();
+        }
+        else
+        {
+            AudioManager.instance.StopMusic();
+        }
     }
 
 }

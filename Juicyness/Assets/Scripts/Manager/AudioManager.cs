@@ -6,7 +6,8 @@ public class AudioManager : MonoBehaviour
 {
 
     public static AudioManager instance;
-    
+    [SerializeField] private float timeForMusicToFade = 1.5f;
+
     public SoundEffect[] soundEffects;
 
     private void Awake()
@@ -37,6 +38,16 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
+        SoundEffect fx = Array.Find(soundEffects, sound => sound.clipName == "Music");
+        foreach (AudioSource source in fx.source)
+        {
+            if (!source.isPlaying)
+            {
+                source.clip = fx.clip[UnityEngine.Random.Range(0, fx.clip.Length)];
+                source.Play();
+                return;
+            }
+        }
     }
 
     public void Play(string name)
@@ -76,6 +87,48 @@ public class AudioManager : MonoBehaviour
                 source.Stop();
             }
         }
+    }
+
+    public void PlayMusic()
+    {
+        SoundEffect fx = Array.Find(soundEffects, sound => sound.clipName == "Music");
+        if (fx == null)
+        {
+            Debug.Log("/!\\ Sound : Music not found /!\\");
+            return;
+        }
+        fx.source[0].clip = fx.clip[UnityEngine.Random.Range(0, fx.clip.Length)];
+        StopCoroutine("GraduallyChangeMusicVolume");
+        StartCoroutine(GraduallyChangeMusicVolume(fx.source[0], 1, 0));
+    }
+
+    public void StopMusic()
+    {
+        SoundEffect fx = Array.Find(soundEffects, sound => sound.clipName == "Music");
+        if (fx == null)
+        {
+            Debug.Log("/!\\ Sound : Music not found /!\\");
+            return;
+        }
+        StopCoroutine("GraduallyChangeMusicVolume");
+        StartCoroutine(GraduallyChangeMusicVolume(fx.source[0], 0, 1));
+    }
+
+    private IEnumerator GraduallyChangeMusicVolume(AudioSource musicSource, float goal, float beginning)
+    {
+        float elapsedTime = 0;
+
+        while (elapsedTime < timeForMusicToFade)
+        {
+            musicSource.volume = Mathf.Lerp(beginning, goal, (elapsedTime / timeForMusicToFade));
+            elapsedTime += Time.deltaTime;
+
+            // Yield here
+            yield return null;
+        }
+        // Make sure we got there
+        musicSource.volume = goal;
+        yield return null;
     }
     
     public float GetClipLength(string name)

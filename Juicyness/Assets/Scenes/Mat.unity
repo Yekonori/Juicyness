@@ -2845,51 +2845,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
-    - target: {fileID: 7760249117306967912, guid: 0231900c6b442084eba3230e426a3bd8,
-        type: 3}
-      propertyPath: soundEffects.Array.data[0].numberOfAudioSourceAvailable
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7760249117306967912, guid: 0231900c6b442084eba3230e426a3bd8,
-        type: 3}
-      propertyPath: soundEffects.Array.data[1].numberOfAudioSourceAvailable
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7760249117306967912, guid: 0231900c6b442084eba3230e426a3bd8,
-        type: 3}
-      propertyPath: soundEffects.Array.data[2].numberOfAudioSourceAvailable
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7760249117306967912, guid: 0231900c6b442084eba3230e426a3bd8,
-        type: 3}
-      propertyPath: soundEffects.Array.data[3].numberOfAudioSourceAvailable
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7760249117306967912, guid: 0231900c6b442084eba3230e426a3bd8,
-        type: 3}
-      propertyPath: soundEffects.Array.data[4].numberOfAudioSourceAvailable
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7760249117306967912, guid: 0231900c6b442084eba3230e426a3bd8,
-        type: 3}
-      propertyPath: soundEffects.Array.data[5].numberOfAudioSourceAvailable
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7760249117306967912, guid: 0231900c6b442084eba3230e426a3bd8,
-        type: 3}
-      propertyPath: soundEffects.Array.data[6].numberOfAudioSourceAvailable
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7760249117306967912, guid: 0231900c6b442084eba3230e426a3bd8,
-        type: 3}
-      propertyPath: soundEffects.Array.data[7].numberOfAudioSourceAvailable
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7760249117306967912, guid: 0231900c6b442084eba3230e426a3bd8,
-        type: 3}
-      propertyPath: soundEffects.Array.data[8].numberOfAudioSourceAvailable
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7760249117306967913, guid: 0231900c6b442084eba3230e426a3bd8,
         type: 3}
       propertyPath: m_RootOrder
@@ -2995,6 +2950,7 @@ MonoBehaviour:
   isParticleEffectsOn: 0
   isSoundEffectOn: 0
   isUIEffecstOn: 0
+  isMusicOn: 0
   cameraBasePosition: {x: 0, y: 0, z: -10}
   cameraBaseRotation: {x: 0, y: 0, z: 0}
   cameraTiltedPosition: {x: 0, y: -5.8, z: -5}
