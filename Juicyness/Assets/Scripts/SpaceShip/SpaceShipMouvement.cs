@@ -53,15 +53,13 @@ public class SpaceShipMouvement : MonoBehaviour
 
             if (life <= 0)
             {
-                if (FeatureManager.instance.isCameraEffectsOn)
-                {
-                    Camera.main.GetComponent<CameraShake>().ShakeCamera(0.3f, 0.8f);
-                }
-                GameManager.instance.canPlay = false;
+                AudioManager.instance.Play("BananaDie");
+                GameManager.instance.LooseProcess();
                 Destroy(gameObject);
             }
             else
             {
+                AudioManager.instance.Play("BananaDamaged");
                 if (FeatureManager.instance.isCameraEffectsOn)
                 {
                     Camera.main.GetComponent<CameraShake>().ShakeCamera(0.2f, 0.1f);

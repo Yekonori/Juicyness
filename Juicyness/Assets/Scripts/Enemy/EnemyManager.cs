@@ -92,7 +92,8 @@ public class EnemyManager : MonoBehaviour
         }
         if(lowest - GameManager.instance.player.transform.position.y <= GameManager.instance.player.GetComponent<SpriteRenderer>().bounds.size.y - goDownStep)
         {
-            GameManager.instance.ChangeState(State.LOOSE);
+            GameManager.instance.LooseProcess();
+            GameManager.instance.canPlay = false;
         }
         if(lowest - GameManager.instance.player.transform.position.y <= numberOfLinesBeforeDeath * goDownStep)
         {

@@ -38,7 +38,7 @@ public class Enemy : MonoBehaviour
             CheckBoundary();
             if (canCheckIfCanShoot)
             {
-                RaycastHit2D hit = Physics2D.Raycast(bulletSpawner.position - new Vector3(0, 0.2f, 0), -Vector2.up);
+                RaycastHit2D hit = Physics2D.Raycast(bulletSpawner.position, -Vector2.up);
 
                 if (hit.collider != null)
                 {
@@ -74,6 +74,7 @@ public class Enemy : MonoBehaviour
 
     public void Die()
     {
+        AudioManager.instance.Play("EnemyDamaged");
         mouvementManager.enemies.Remove(gameObject);
         mouvementManager.CheckIfNoMoreEnemies();
         Destroy(this.gameObject);
@@ -83,7 +84,11 @@ public class Enemy : MonoBehaviour
     {
         float waitTime = Random.Range(minShootTime, maxShootTime);
         yield return new WaitForSeconds(waitTime);
-        Instantiate(bulletPrefab, bulletSpawner.position, Quaternion.identity);
-        canCheckIfCanShoot = true;
+        if (GameManager.instance.canPlay)
+        {
+            AudioManager.instance.Play("EnemyShoot");
+            Instantiate(bulletPrefab, bulletSpawner.position, Quaternion.identity);
+            canCheckIfCanShoot = true;
+        }
     }
 }

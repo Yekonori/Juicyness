@@ -33,14 +33,17 @@ public class AudioManager : MonoBehaviour
 
     public void Play(string name)
     {
-        SoundEffect fx = Array.Find(soundEffects, sound => sound.clipName == name);
-        if (fx == null)
+        if (FeatureManager.instance.isSoundEffectOn)
         {
-            Debug.Log("/!\\ Sound : " + name + "not found /!\\");
-            return;
+            SoundEffect fx = Array.Find(soundEffects, sound => sound.clipName == name);
+            if (fx == null)
+            {
+                Debug.Log("/!\\ Sound : " + name + "not found /!\\");
+                return;
+            }
+            fx.source.clip = fx.clip[UnityEngine.Random.Range(0, fx.clip.Length)];
+            fx.source.Play();
         }
-        fx.source.clip = fx.clip[UnityEngine.Random.Range(0, fx.clip.Length)];
-        fx.source.Play();
     }
 
     public void Stop(string name)

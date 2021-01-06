@@ -66,6 +66,7 @@ public class GameManager : MonoBehaviour
         numberOfEnemyLines--;
         if(numberOfEnemyLines == 0)
         {
+            AudioManager.instance.Play("Win");
             if (!FeatureManager.instance.isCameraEffectsOn)
             {
                 ChangeState(State.WIN);
@@ -82,6 +83,16 @@ public class GameManager : MonoBehaviour
     {
         player = newPlayer;
         if (onPlayerAssigned != null) onPlayerAssigned.Invoke();
+    }
+
+    public void LooseProcess()
+    {
+        if (FeatureManager.instance.isCameraEffectsOn)
+        {
+            Camera.main.GetComponent<CameraShake>().ShakeCamera(0.3f, 0.8f);
+        }
+        AudioManager.instance.Play("Lose");
+        canPlay = false;
     }
 
 }

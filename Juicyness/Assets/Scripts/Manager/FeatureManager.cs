@@ -12,6 +12,7 @@ public class FeatureManager : MonoBehaviour
     [HideInInspector] public bool isCameraEffectsOn = false;
     [HideInInspector] public bool isCameraTilted = false;
     [HideInInspector] public bool isParticleEffectsOn = false;
+    [HideInInspector] public bool isSoundEffectOn = false;
 
     public System.Action onCameraTiltedToggle;
 
@@ -57,7 +58,8 @@ public class FeatureManager : MonoBehaviour
                         break;
                     case "2":
                     case "é":
-                        EnemiesBecomeBlack();
+                        print("Second feature : Sound Effect");
+                        ToggleSoundEffect();
                         break;
                     case "3":
                     case @"""":
@@ -107,32 +109,6 @@ public class FeatureManager : MonoBehaviour
         }
     }
 
-    public void EnemiesBecomeBlack()
-    {
-        if (!areEnemiesBlack)
-        {
-            areEnemiesBlack = true;
-            foreach(EnemyMouvementManager enemyLine in EnemyManager.instance.enemiesMouvementManager)
-            {
-                foreach (GameObject enemy in enemyLine.enemies)
-                {
-                    enemy.GetComponent<SpriteRenderer>().color = Color.black;
-                }
-            }
-        }
-        else
-        {
-            areEnemiesBlack = false; 
-            foreach (EnemyMouvementManager enemyLine in EnemyManager.instance.enemiesMouvementManager)
-            {
-                foreach (GameObject enemy in enemyLine.enemies)
-                {
-                    enemy.GetComponent<SpriteRenderer>().color = Color.white;
-                }
-            }
-        }
-    }
-
     public void ToggleCameraEffects()
     {
         isCameraEffectsOn = !isCameraEffectsOn;
@@ -147,6 +123,11 @@ public class FeatureManager : MonoBehaviour
     public void ToggleParticleEffects()
     {
         isParticleEffectsOn = !isParticleEffectsOn;
+    }
+
+    public void ToggleSoundEffect()
+    {
+        isSoundEffectOn = !isSoundEffectOn;
     }
 
 }
