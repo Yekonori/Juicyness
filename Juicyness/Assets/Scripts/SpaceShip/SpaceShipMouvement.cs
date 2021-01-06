@@ -10,6 +10,8 @@ public class SpaceShipMouvement : MonoBehaviour
     private Vector3 screenBounds;
     private float playerWidth;
 
+    [SerializeField] private SpaceShipSkin shipSkin;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +19,7 @@ public class SpaceShipMouvement : MonoBehaviour
         lifeText.text = "Life : " + life;
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
         playerWidth = GetComponent<SpriteRenderer>().bounds.size.x;
+        shipSkin.ChangeBananaSprite();
     }
 
     // Update is called once per frame
@@ -43,6 +46,9 @@ public class SpaceShipMouvement : MonoBehaviour
         {
             life--;
             lifeText.text = "Life : " + life;
+
+            shipSkin.ChangeBananaState();
+
             if (life <= 0)
             {
                 if (FeatureManager.instance.isCameraEffectsOn)
