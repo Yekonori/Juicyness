@@ -65,7 +65,7 @@ public class FeatureManager : MonoBehaviour
                         break;
                     case "4":
                     case "'":
-                        print("Fourth feature");
+                        print("Fourth feature : Particles Effect");
                         ToggleParticleEffects();
                         break;
                     case "5":
@@ -74,7 +74,7 @@ public class FeatureManager : MonoBehaviour
                         break;
                     case "6":
                     case "-":
-                        print("Sixth feature");
+                        print("Sixth feature : Camera effects");
                         ToggleCameraEffects();
                         break;
                     case "7":
@@ -83,7 +83,7 @@ public class FeatureManager : MonoBehaviour
                         break;
                     case "8":
                     case "_":
-                        print("Eigth feature");
+                        print("Eigth feature : Tilted Camera");
                         ToggleCameraTiltingEffect();
                         break;
                     default:
