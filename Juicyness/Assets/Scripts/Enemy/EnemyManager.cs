@@ -10,6 +10,8 @@ public class EnemyManager : MonoBehaviour
     public float goDownStep = 0.2f;
     [SerializeField] private float numberOfLinesBeforeDeath = 10;
     [SerializeField] private float firstAlpha = 0.2f;
+    [SerializeField] private float firstLineOffset = 44;
+    [SerializeField] private float spaceBetweenEnemyLines = 7;
 
     public float increaseSpeed = 0.5f;
 
@@ -27,6 +29,11 @@ public class EnemyManager : MonoBehaviour
     void Start()
     {
         GameManager.instance.numberOfEnemyLines = enemiesMouvementManager.Count;
+        for(int i = 0; i < enemiesMouvementManager.Count; i++)
+        {
+            enemiesMouvementManager[i].transform.position = new Vector3(enemiesMouvementManager[i].transform.position.x, GameManager.instance.player.transform.position.y + (firstLineOffset * goDownStep), enemiesMouvementManager[i].transform.position.z);
+            firstLineOffset -= spaceBetweenEnemyLines;
+        }
     }
 
     // Update is called once per frame

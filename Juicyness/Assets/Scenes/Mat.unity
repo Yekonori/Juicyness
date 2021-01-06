@@ -376,6 +376,8 @@ MonoBehaviour:
   goDownStep: 0.2
   numberOfLinesBeforeDeath: 10
   firstAlpha: 0.2
+  firstLineOffset: 44
+  spaceBetweenEnemyLines: 7
   increaseSpeed: 0.1
 --- !u!1001 &252467670
 PrefabInstance:
@@ -3536,11 +3538,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 7578868873071382268, guid: 40a2547d61e573f489d8a0c8033d9096,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40a2547d61e573f489d8a0c8033d9096, type: 3}
