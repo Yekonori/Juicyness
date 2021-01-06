@@ -11,8 +11,10 @@ public class FeatureManager : MonoBehaviour
     private bool areEnemiesBlack = false;
     [HideInInspector] public bool isCameraEffectsOn = false;
     [HideInInspector] public bool isCameraTilted = false;
+    [HideInInspector] public bool isParticleEffectsOn = false;
 
     public System.Action onCameraTiltedToggle;
+
     [Header("Camera Settings")]
     [SerializeField] private Vector3 cameraBasePosition;
     [SerializeField] private Vector3 cameraBaseRotation;
@@ -64,6 +66,7 @@ public class FeatureManager : MonoBehaviour
                     case "4":
                     case "'":
                         print("Fourth feature");
+                        ToggleParticleEffects();
                         break;
                     case "5":
                     case "(":
@@ -139,6 +142,11 @@ public class FeatureManager : MonoBehaviour
     {
         isCameraTilted = !isCameraTilted;
         if (onCameraTiltedToggle != null) onCameraTiltedToggle.Invoke();
+    }
+
+    public void ToggleParticleEffects()
+    {
+        isParticleEffectsOn = !isParticleEffectsOn;
     }
 
 }
