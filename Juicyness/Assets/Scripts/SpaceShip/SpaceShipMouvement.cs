@@ -16,10 +16,12 @@ public class SpaceShipMouvement : MonoBehaviour
     void Start()
     {
         GameManager.instance.SetPlayer(gameObject);
+
         lifeText.text = "Life : " + life;
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
         playerWidth = GetComponent<SpriteRenderer>().bounds.size.x;
-        shipSkin.ChangeBananaSprite();
+
+        //shipSkin.ChangeBananaSprite();
     }
 
     // Update is called once per frame

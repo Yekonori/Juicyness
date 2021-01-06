@@ -8,6 +8,8 @@ public class SpaceShipSkin : MonoBehaviour
 {
     #region Script Parameters
 
+    [Header("Sprite")]
+
     [SerializeField]
     private SpriteRenderer currentSprite;
 
@@ -22,13 +24,27 @@ public class SpaceShipSkin : MonoBehaviour
     [SerializeField]
     private Sprite badBanana;
 
+    [Header("Damaged")]
+
+    [SerializeField]
+    private float damagedEffectDuration = 0.5f;
+    [SerializeField]
+    private float damagedEffectGap = 0.1f;
+
     #endregion
 
     #region Fields
 
     private eBananaState eBananaState;
 
+    private float currentDamagedEffect = 0;
+
     #endregion
+
+    private void Start()
+    {
+        eBananaState = eBananaState.ORIGINAL;
+    }
 
     public void ChangeBananaState()
     {
@@ -49,6 +65,7 @@ public class SpaceShipSkin : MonoBehaviour
         }
 
         ChangeBananaSprite();
+        StartCoroutine(DamagedSprite());
     }
 
     public void ChangeBananaSprite()
@@ -72,5 +89,18 @@ public class SpaceShipSkin : MonoBehaviour
             default:
                 break;
         }
+    }
+
+    public IEnumerator DamagedSprite()
+    {
+        while (currentDamagedEffect < damagedEffectGap)
+        {
+            currentSprite.enabled = !currentSprite.enabled;
+            currentDamagedEffect += damagedEffectGap;
+            yield return new WaitForSeconds(damagedEffectGap);
+        }
+
+        currentDamagedEffect = 0;
+        currentSprite.enabled = true;
     }
 }

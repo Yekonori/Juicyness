@@ -5027,3 +5027,5 @@ MonoBehaviour:
   yellowBanana: {fileID: 0}
   brownBanana: {fileID: 0}
   badBanana: {fileID: 0}
+  damagedEffectDuration: 1
+  damagedEffectGap: 0.1
