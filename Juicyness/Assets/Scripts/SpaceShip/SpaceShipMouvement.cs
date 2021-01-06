@@ -5,8 +5,9 @@ public class SpaceShipMouvement : MonoBehaviour
 {
 
     [SerializeField] private float speed = 2;
-    [SerializeField] private float life = 3;
+    [SerializeField] private int life = 3;
     [SerializeField] private Text lifeText;
+    [SerializeField] private GameObject lifeIcons;
     private Vector3 screenBounds;
     private float playerWidth;
 
@@ -21,7 +22,21 @@ public class SpaceShipMouvement : MonoBehaviour
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
         playerWidth = GetComponent<SpriteRenderer>().bounds.size.x;
 
-        //shipSkin.ChangeBananaSprite();
+        shipSkin.ChangeBananaSprite();
+
+        FeatureManager.instance.onUIEffectsToggle += () =>
+        {
+            if (FeatureManager.instance.isUIEffecstOn)
+            {
+                lifeText.gameObject.SetActive(false);
+                lifeIcons.SetActive(true);
+            }
+            else
+            {
+                lifeText.gameObject.SetActive(true);
+                lifeIcons.SetActive(false);
+            }
+        };
     }
 
     // Update is called once per frame
@@ -48,7 +63,7 @@ public class SpaceShipMouvement : MonoBehaviour
         {
             life--;
             lifeText.text = "Life : " + life;
-
+            UpdateLifeIcons();
             shipSkin.ChangeBananaState();
 
             if (life <= 0)
@@ -68,5 +83,11 @@ public class SpaceShipMouvement : MonoBehaviour
             }
             //TODO ELSE FEEDBACK, INVINCIBILITY ?????
         }
+    }
+
+    private void UpdateLifeIcons()
+    {
+        lifeIcons.transform.GetChild(life).GetComponent<Animation>().Play();
+        //lifeIcons.transform.GetChild(life).gameObject.SetActive(false);
     }
 }

@@ -13,8 +13,10 @@ public class FeatureManager : MonoBehaviour
     [HideInInspector] public bool isCameraTilted = false;
     [HideInInspector] public bool isParticleEffectsOn = false;
     [HideInInspector] public bool isSoundEffectOn = false;
+    [HideInInspector] public bool isUIEffecstOn = false;
 
     public System.Action onCameraTiltedToggle;
+    public System.Action onUIEffectsToggle;
 
     [Header("Camera Settings")]
     [SerializeField] private Vector3 cameraBasePosition;
@@ -81,7 +83,8 @@ public class FeatureManager : MonoBehaviour
                         break;
                     case "7":
                     case "è":
-                        print("Seventh feature");
+                        print("Seventh feature : UI Effects");
+                        ToggleUIEffects();
                         break;
                     case "8":
                     case "_":
@@ -128,6 +131,12 @@ public class FeatureManager : MonoBehaviour
     public void ToggleSoundEffect()
     {
         isSoundEffectOn = !isSoundEffectOn;
+    }
+
+    public void ToggleUIEffects()
+    {
+        isUIEffecstOn = !isUIEffecstOn;
+        if (onUIEffectsToggle != null) onUIEffectsToggle.Invoke();
     }
 
 }

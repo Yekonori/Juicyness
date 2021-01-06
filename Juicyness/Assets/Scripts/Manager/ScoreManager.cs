@@ -8,6 +8,7 @@ public class ScoreManager : MonoBehaviour
 
     [SerializeField] private Text scoreText;
     private float score = 0;
+    private Animation scoreAnimation;
 
     private void Awake()
     {
@@ -24,16 +25,21 @@ public class ScoreManager : MonoBehaviour
     void Start()
     {
         scoreText.text = "Score : " + score.ToString();
+        scoreAnimation = scoreText.gameObject.GetComponent<Animation>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void ChangeScore(float scoreToAdd)
     {
+        if (FeatureManager.instance.isUIEffecstOn)
+        {
+            scoreAnimation.Play();
+        }
         score += scoreToAdd;
         scoreText.text = "Score : " + score.ToString();
     }

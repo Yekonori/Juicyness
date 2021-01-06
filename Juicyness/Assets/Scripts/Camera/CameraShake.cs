@@ -33,10 +33,7 @@ public class CameraShake : MonoBehaviour
 				canShake = false;
             }
 		};
-    }
 
-    void OnEnable()
-	{
 		originalPos = camTransform.localPosition;
 	}
 

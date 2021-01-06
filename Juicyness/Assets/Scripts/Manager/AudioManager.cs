@@ -20,10 +20,18 @@ public class AudioManager : MonoBehaviour
 
         foreach (SoundEffect fx in soundEffects)
         {
-            fx.source = gameObject.AddComponent<AudioSource>();
-            fx.source.volume = fx.volume;
-            fx.source.priority = fx.priority;
-            fx.source.loop = fx.loop;
+            if(fx.numberOfAudioSourceAvailable < 1)
+            {
+                fx.numberOfAudioSourceAvailable = 1;
+            }
+            fx.source = new AudioSource[fx.numberOfAudioSourceAvailable];
+            for (int i = 0; i < fx.numberOfAudioSourceAvailable; i++)
+            {
+                fx.source[i] = gameObject.AddComponent<AudioSource>();
+                fx.source[i].volume = fx.volume;
+                fx.source[i].priority = fx.priority;
+                fx.source[i].loop = fx.loop;
+            }
         }
     }
 
@@ -41,8 +49,15 @@ public class AudioManager : MonoBehaviour
                 Debug.Log("/!\\ Sound : " + name + "not found /!\\");
                 return;
             }
-            fx.source.clip = fx.clip[UnityEngine.Random.Range(0, fx.clip.Length)];
-            fx.source.Play();
+            foreach (AudioSource source in fx.source)
+            {
+                if (!source.isPlaying)
+                {
+                    source.clip = fx.clip[UnityEngine.Random.Range(0, fx.clip.Length)];
+                    source.Play();
+                    return;
+                }
+            }
         }
     }
 
@@ -54,7 +69,13 @@ public class AudioManager : MonoBehaviour
             Debug.Log("/!\\ Sound : " + name + "not found /!\\");
             return;
         }
-        fx.source.Stop();
+        foreach (AudioSource source in fx.source)
+        {
+            if (source.isPlaying)
+            {
+                source.Stop();
+            }
+        }
     }
     
     public float GetClipLength(string name)
@@ -65,6 +86,6 @@ public class AudioManager : MonoBehaviour
             Debug.Log("/!\\ Sound : " + name + "not found /!\\");
             return 0;
         }
-        return fx.source.clip.length;
+        return fx.source[0].clip.length;
     }
 }

@@ -15,6 +15,8 @@ public class SoundEffect
 
     public bool loop;
 
+    public int numberOfAudioSourceAvailable = 1;
+
     [HideInInspector]
-    public AudioSource source;
+    public AudioSource[] source;
 }
