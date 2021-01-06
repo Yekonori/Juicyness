@@ -4856,6 +4856,7 @@ GameObject:
   - component: {fileID: 7578868873071382243}
   - component: {fileID: 7578868873071382242}
   - component: {fileID: 7578868873071382241}
+  - component: {fileID: 2130972445511978955}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -4991,6 +4992,7 @@ MonoBehaviour:
   speed: 2
   life: 3
   lifeText: {fileID: 0}
+  shipSkin: {fileID: 2130972445511978955}
 --- !u!114 &7578868873071382241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5008,3 +5010,20 @@ MonoBehaviour:
   bulletSpawner: {fileID: 7578868871928702337}
   timeBetweenBullet: 0.5
   particleObject: {fileID: 6539641071107257664}
+--- !u!114 &2130972445511978955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7578868873071382246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e5ca3d6ec134e444a2257ed5c28f40c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentSprite: {fileID: 7578868873071382247}
+  originalSprite: {fileID: 21300000, guid: 4fb6f0d87c50f764c8edf6e4fd642515, type: 3}
+  yellowBanana: {fileID: 0}
+  brownBanana: {fileID: 0}
+  badBanana: {fileID: 0}
