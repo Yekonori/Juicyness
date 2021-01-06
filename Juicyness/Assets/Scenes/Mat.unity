@@ -735,7 +735,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 4468019958494447244, guid: e1118f0c65c0b69489478ed13a3e5727,
     type: 3}
   bulletSpawner: {fileID: 1663392077}
-  timeBetweenBullet: 0
+  timeBetweenBullet: 0.5
 --- !u!114 &521761326
 MonoBehaviour:
   m_ObjectHideFlags: 0
