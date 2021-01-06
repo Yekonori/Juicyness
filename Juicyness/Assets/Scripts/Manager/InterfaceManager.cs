@@ -14,7 +14,6 @@ public class InterfaceManager : MonoBehaviour
     [SerializeField] private float timeForDamageEffectToDisappear = 0.25f;
     [Header("DangerEffect")]
     [SerializeField] private Image dangerEffect;
-    [SerializeField] private float timeForDangerEffectToDisappear = 5;
     private float damageEffectLerpTimer = 0;
     private Color damageEffectBaseColor;
     private Color damageEffectfullAlphaColor;
@@ -96,11 +95,11 @@ public class InterfaceManager : MonoBehaviour
         canLerpDamagerEffect = true;
     }
 
-    public void ActivateDangerEffect()
+    public void ActivateDangerEffect(float t)
     {
-        //damageEffectLerpTimer = 0;
-        //dangerEffect.color = damageEffectfullAlphaColor;
-        //canLerpDamagerEffect = true;
+        Color baseColor = new Color(dangerEffect.color.r, dangerEffect.color.g, dangerEffect.color.b, 0);
+        Color goalColor = new Color(dangerEffect.color.r, dangerEffect.color.g, dangerEffect.color.b, 1);
+        dangerEffect.color = Color.Lerp(baseColor, goalColor, t);
     }
 
 }

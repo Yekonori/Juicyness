@@ -10,7 +10,6 @@ public class EnemyMouvementManager : MonoBehaviour
     public float maxShootTime = 5;
     public float boundaryLeft = -5;
     public float boundaryRight = 5;
-    [SerializeField] private float goDownStep = 0.5f;
     public float LineEnemyValue = 5;
     private Vector3 moveDir;
     private EnemyManager enemyManager;
@@ -63,7 +62,7 @@ public class EnemyMouvementManager : MonoBehaviour
         moveLeft = shouldMoveLeft;
         foreach (GameObject enemyLine in enemies)
         {
-            enemyLine.transform.position = new Vector3(enemyLine.transform.position.x, enemyLine.transform.position.y - goDownStep, enemyLine.transform.position.z);
+            enemyLine.transform.position = new Vector3(enemyLine.transform.position.x, enemyLine.transform.position.y - enemyManager.goDownStep, enemyLine.transform.position.z);
         }
     }
 
@@ -71,6 +70,7 @@ public class EnemyMouvementManager : MonoBehaviour
     {
         if (enemies.Count == 0)
         {
+            enemyManager.RemoveEnemyMouvementManager(this);
             GameManager.instance.RemoveALine();
         }
     }

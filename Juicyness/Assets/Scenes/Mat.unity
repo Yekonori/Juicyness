@@ -203,6 +203,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemiesMouvementManager: []
   canGoDown: 1
+  goDownStep: 0.2
+  numberOfLinesBeforeDeath: 10
+  firstAlpha: 0.2
   increaseSpeed: 0.1
 --- !u!1001 &252467670
 PrefabInstance:
@@ -832,7 +835,6 @@ MonoBehaviour:
   damageEffect: {fileID: 1933355229}
   timeForDamageEffectToDisappear: 0.25
   dangerEffect: {fileID: 385141049}
-  timeForDangerEffectToDisappear: 5
 --- !u!4 &579947150
 Transform:
   m_ObjectHideFlags: 0
@@ -1684,7 +1686,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1181118567}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: 0, y: 1.54, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 676974997}
@@ -1708,12 +1710,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies: []
-  speed: 1
+  speed: 0.5
   minShootTime: 4
   maxShootTime: 8
   boundaryLeft: -5
   boundaryRight: 5
-  goDownStep: 0.2
   LineEnemyValue: 5
 --- !u!1001 &1181145111
 PrefabInstance:
@@ -1831,7 +1832,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1354616304}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.75, z: 0}
+  m_LocalPosition: {x: 0, y: 3.54, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1009934399}
@@ -1855,12 +1856,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies: []
-  speed: 1
+  speed: 0.5
   minShootTime: 4
   maxShootTime: 8
   boundaryLeft: -5
   boundaryRight: 5
-  goDownStep: 0.2
   LineEnemyValue: 5
 --- !u!1 &1449565244
 GameObject:
@@ -2487,7 +2487,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1902774053}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 4.5, z: 0}
+  m_LocalPosition: {x: 0, y: 2.54, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 834441219}
@@ -2511,12 +2511,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies: []
-  speed: 1
+  speed: 0.5
   minShootTime: 4
   maxShootTime: 8
   boundaryLeft: -5
   boundaryRight: 5
-  goDownStep: 0.2
   LineEnemyValue: 10
 --- !u!1 &1933355227
 GameObject:
@@ -2939,6 +2938,24 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2130972445511978955, guid: 40a2547d61e573f489d8a0c8033d9096,
+        type: 3}
+      propertyPath: badBanana
+      value: 
+      objectReference: {fileID: 21300000, guid: 4fb6f0d87c50f764c8edf6e4fd642515,
+        type: 3}
+    - target: {fileID: 2130972445511978955, guid: 40a2547d61e573f489d8a0c8033d9096,
+        type: 3}
+      propertyPath: brownBanana
+      value: 
+      objectReference: {fileID: 21300000, guid: 4fb6f0d87c50f764c8edf6e4fd642515,
+        type: 3}
+    - target: {fileID: 2130972445511978955, guid: 40a2547d61e573f489d8a0c8033d9096,
+        type: 3}
+      propertyPath: yellowBanana
+      value: 
+      objectReference: {fileID: 21300000, guid: 4fb6f0d87c50f764c8edf6e4fd642515,
+        type: 3}
     - target: {fileID: 7578868873071382240, guid: 40a2547d61e573f489d8a0c8033d9096,
         type: 3}
       propertyPath: m_RootOrder
@@ -3003,6 +3020,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7578868873071382268, guid: 40a2547d61e573f489d8a0c8033d9096,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40a2547d61e573f489d8a0c8033d9096, type: 3}
