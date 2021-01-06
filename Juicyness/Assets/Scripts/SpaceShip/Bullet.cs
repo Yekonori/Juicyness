@@ -4,11 +4,16 @@ public class Bullet : MonoBehaviour
 {
     [SerializeField] private bool isEnemyBullet = false;
     [SerializeField] private float speed = 3;
+    [SerializeField] private TrailRenderer trail;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        trail.enabled = false;
+        if (FeatureManager.instance.isParticleEffectsOn)
+        {
+            trail.enabled = true;
+        }
     }
 
     // Update is called once per frame

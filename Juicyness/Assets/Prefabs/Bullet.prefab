@@ -115,6 +115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isEnemyBullet: 0
   speed: 15
+  trail: {fileID: 3853057623828284284}
 --- !u!50 &1008482298035003185
 Rigidbody2D:
   serializedVersion: 4
@@ -144,7 +145,7 @@ TrailRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4468019958494447244}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
