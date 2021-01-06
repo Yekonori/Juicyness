@@ -1,0 +1,109 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7760249117306967910
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7760249117306967913}
+  - component: {fileID: 7760249117306967912}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7760249117306967913
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7760249117306967910}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7760249117306967912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7760249117306967910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b07e344648b32548b30ddfb23b814cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundEffects:
+  - clipName: BananaSpawn
+    clip:
+    - {fileID: 8300000, guid: 1a366083df809484e94ffbe55916180a, type: 3}
+    volume: 1
+    priority: 0
+    loop: 0
+    source: {fileID: 0}
+  - clipName: EnemyShoot
+    clip:
+    - {fileID: 8300000, guid: 780d02aeadac85248be2c59ab1caaec7, type: 3}
+    volume: 1
+    priority: 0
+    loop: 0
+    source: {fileID: 0}
+  - clipName: Lose
+    clip:
+    - {fileID: 8300000, guid: bdc946e5d094fd447ac1c6934d595a11, type: 3}
+    volume: 1
+    priority: 0
+    loop: 0
+    source: {fileID: 0}
+  - clipName: EnemyDamaged
+    clip:
+    - {fileID: 8300000, guid: 24efe234dda43c147ab45d2ce6d2f948, type: 3}
+    volume: 1
+    priority: 0
+    loop: 0
+    source: {fileID: 0}
+  - clipName: BonusLife
+    clip:
+    - {fileID: 8300000, guid: acb44570aa7ffe94680094ea4961c895, type: 3}
+    volume: 1
+    priority: 0
+    loop: 0
+    source: {fileID: 0}
+  - clipName: BananaDamaged
+    clip:
+    - {fileID: 8300000, guid: a2b7aad748ae2aa4eba989a8fff3c749, type: 3}
+    volume: 1
+    priority: 0
+    loop: 0
+    source: {fileID: 0}
+  - clipName: BananaDie
+    clip:
+    - {fileID: 8300000, guid: eb884aa4890a26b4d88faa74fd892b5f, type: 3}
+    volume: 1
+    priority: 0
+    loop: 0
+    source: {fileID: 0}
+  - clipName: BananaShoot
+    clip:
+    - {fileID: 8300000, guid: 23f9f95ad0f4e8648bc1e4e2803e178a, type: 3}
+    volume: 1
+    priority: 0
+    loop: 0
+    source: {fileID: 0}
+  - clipName: Win
+    clip:
+    - {fileID: 8300000, guid: cd2edc13e5df59948be727db387b16da, type: 3}
+    volume: 1
+    priority: 0
+    loop: 0
+    source: {fileID: 0}
