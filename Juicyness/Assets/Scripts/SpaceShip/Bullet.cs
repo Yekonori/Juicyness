@@ -29,8 +29,13 @@ public class Bullet : MonoBehaviour
             }
             else if (collision.gameObject.CompareTag("Enemy"))
             {
-                ScoreManager.instance.ChangeScore(collision.GetComponent<Enemy>().enemyValue);
-                collision.GetComponent<Enemy>().Die();
+                Enemy enemyCollided = collision.GetComponent<Enemy>();
+
+                if (enemyCollided != null)
+                {
+                    ScoreManager.instance.ChangeScore(collision.GetComponent<Enemy>().enemyValue);
+                    collision.GetComponent<Enemy>().Die();
+                }
             }
         }
         else

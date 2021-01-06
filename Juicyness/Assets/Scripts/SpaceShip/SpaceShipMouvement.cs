@@ -8,11 +8,15 @@ public class SpaceShipMouvement : MonoBehaviour
     [SerializeField] private float life = 3;
     [SerializeField] private Text lifeText;
 
+    [SerializeField] private SpaceShipSkin shipSkin;
+
     // Start is called before the first frame update
     void Start()
     {
         GameManager.instance.SetPlayer(gameObject);
         lifeText.text = "Life : " + life;
+
+        shipSkin.ChangeBananaSprite();
     }
 
     // Update is called once per frame
@@ -37,6 +41,9 @@ public class SpaceShipMouvement : MonoBehaviour
         {
             life--;
             lifeText.text = "Life : " + life;
+
+            shipSkin.ChangeBananaState();
+
             if (life <= 0)
             {
                 if (FeatureManager.instance.isCameraEffectsOn)
