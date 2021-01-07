@@ -35,11 +35,6 @@ public class SpaceShipMouvement : MonoBehaviour
         animator = GetComponent<Animator>();
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
 
-        FeatureManager.instance.onCameraTiltedToggle += () =>
-        {
-            screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
-        };
-
         FeatureManager.instance.onUIEffectsToggle += () =>
         {
             if (FeatureManager.instance.isUIEffecstOn)
@@ -111,13 +106,19 @@ public class SpaceShipMouvement : MonoBehaviour
                 life--;
                 lifeText.text = "Life : " + life;
                 UpdateLifeIcons();
-                if (3 - life >= 0)
+                if (3 - life >= 0 && 3 - life < bananaAnimators.Length)
                 {
                     animator.runtimeAnimatorController = bananaAnimators[3 - life];
                 }
                 if (FeatureManager.instance.isSpriteOn)
                 {
                     shipSkin.ChangeBananaState();
+                }
+                else
+                {
+                    animator.enabled = false;
+                    shipSkin.SetBananaState(4);
+                    shipSkin.ChangeBananaSprite();
                 }
                 if (life <= 0)
                 {

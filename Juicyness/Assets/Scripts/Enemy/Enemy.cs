@@ -49,12 +49,6 @@ public class Enemy : MonoBehaviour
 
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
 
-        FeatureManager.instance.onCameraTiltedToggle += () =>
-        {
-            screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
-        };
-
-
         FeatureManager.instance.onSpritesToggle += () =>
         {
             if (this)
@@ -188,7 +182,7 @@ public class Enemy : MonoBehaviour
 
     IEnumerator WaitAndDestroy()
     {
-        yield return new WaitForSeconds(0.6f);
+        yield return new WaitForSeconds(1.5f);
         Destroy(this.gameObject);
     }
 
