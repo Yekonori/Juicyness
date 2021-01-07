@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform bulletSpawner;
+    [SerializeField] private GameObject particleExplosion;
 
     private EnemyMouvementManager mouvementManager;
     [HideInInspector] public float enemyValue;
@@ -104,6 +105,17 @@ public class Enemy : MonoBehaviour
         AudioManager.instance.Play("EnemyDamaged");
         mouvementManager.enemies.Remove(gameObject);
         mouvementManager.CheckIfNoMoreEnemies();
+        if (FeatureManager.instance.isParticleEffectsOn)
+        {
+            particleExplosion.SetActive(true);
+        }
+        spriteRenderer.enabled = false;
+        StartCoroutine(WaitAndDestroy());
+    }
+
+    IEnumerator WaitAndDestroy()
+    {
+        yield return new WaitForSeconds(0.6f);
         Destroy(this.gameObject);
     }
 

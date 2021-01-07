@@ -64,11 +64,11 @@ public class SpaceShipMouvement : MonoBehaviour
     {
         if (GameManager.instance.canPlay)
         {
-            if (Input.GetAxis("Horizontal") > 0.1f)
+            if (Input.GetAxis("Horizontal") > 0f)
             {
                 transform.position += Vector3.right * speed * Time.deltaTime;
             }
-            else if (Input.GetAxis("Horizontal") < -0.1f)
+            else if (Input.GetAxis("Horizontal") < 0f)
             {
                 transform.position -= Vector3.right * speed * Time.deltaTime;
             }

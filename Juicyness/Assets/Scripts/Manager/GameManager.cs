@@ -87,12 +87,17 @@ public class GameManager : MonoBehaviour
 
     public void LooseProcess()
     {
+
+        AudioManager.instance.Play("Lose");
+        canPlay = false;
         if (FeatureManager.instance.isCameraEffectsOn)
         {
             Camera.main.GetComponent<CameraShake>().ShakeCamera(0.3f, 0.8f);
         }
-        AudioManager.instance.Play("Lose");
-        canPlay = false;
+        else
+        {
+            ChangeState(State.LOOSE);
+        }
     }
 
 }
