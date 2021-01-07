@@ -80,7 +80,16 @@ public class Enemy : MonoBehaviour
 
     public void Die()
     {
+        StartCoroutine(DieAnimations());
+    }
+
+    public IEnumerator DieAnimations()
+    {
+        Animator.Play("DieAnimation");
         AudioManager.instance.Play("EnemyDamaged");
+
+        yield return new WaitForSeconds(1.4f);
+
         mouvementManager.enemies.Remove(gameObject);
         mouvementManager.CheckIfNoMoreEnemies();
         Destroy(this.gameObject);

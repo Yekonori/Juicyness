@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4468019958494447246}
   - component: {fileID: 4468019958494447247}
-  - component: {fileID: 5830050815212435327}
   - component: {fileID: -1879697584299314417}
   - component: {fileID: 1008482298035003185}
   - component: {fileID: 3853057623828284284}
+  - component: {fileID: 597089736556899561}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Bullet
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 4468019958494447244}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -3.45, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_LocalScale: {x: 3, y: 3, z: 0.25}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -74,7 +74,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c532c9ab11158e34d82f1c5bb6cd8985, type: 3}
+  m_Sprite: {fileID: -7042355562317366915, guid: 53fa5310dd9900b448e84f838beb08a8,
+    type: 3}
   m_Color: {r: 0.764151, g: 0.6693582, b: 0.28114986, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -85,22 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &5830050815212435327
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4468019958494447244}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
 --- !u!114 &-1879697584299314417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -234,3 +219,19 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
+--- !u!70 &597089736556899561
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4468019958494447244}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.000000004967054, y: -0.0035589538}
+  m_Size: {x: 0.10516458, y: 0.28497028}
+  m_Direction: 0
