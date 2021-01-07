@@ -74,7 +74,9 @@ public class SpaceShipSkin : MonoBehaviour
         }
         else
         {
-            GetComponent<SpriteRenderer>().sprite = brownBanana;
+            currentSprite.enabled = false;
+            ChangeBananaSprite();
+            currentSprite.enabled = true;
         }
     }
 

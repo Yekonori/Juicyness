@@ -110,6 +110,11 @@ public class FeatureManager : MonoBehaviour
     public void ToggleSprites()
     {
         isSpriteOn = !isSpriteOn;
+        if (!isSpriteOn)
+        {
+            isAnimationOn = false;
+            if (onAnimationsToggle != null) onAnimationsToggle.Invoke();
+        }
         if (onSpritesToggle != null) onSpritesToggle.Invoke();
     }
 

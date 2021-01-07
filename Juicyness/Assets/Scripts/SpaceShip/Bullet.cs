@@ -89,6 +89,7 @@ public class Bullet : MonoBehaviour
                 else
                 {
                     bulletCollision = true;
+                    collider.enabled = false;
                     if (FeatureManager.instance.isParticleEffectsOn)
                     {
                         smokeParticles.SetActive(true);
@@ -122,13 +123,11 @@ public class Bullet : MonoBehaviour
             {
                 if (FeatureManager.instance.isAnimationOn)
                 {
-                    print("miam");
                     animator.SetTrigger("isCooked"); 
                     StartCoroutine(WaitAndDestroy(0.8f));
                 }
                 else
                 {
-                    print("oh no");
                     GetComponent<SpriteRenderer>().enabled = false;
                     StartCoroutine(WaitAndDestroy(0.3f));
                 }
@@ -142,7 +141,6 @@ public class Bullet : MonoBehaviour
 
     IEnumerator WaitAndDestroy(float waitTime)
     {
-        print("hold on");
         yield return new WaitForSeconds(waitTime);
         Destroy(this.gameObject);
     }
