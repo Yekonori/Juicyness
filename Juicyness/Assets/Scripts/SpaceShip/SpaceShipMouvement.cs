@@ -111,7 +111,10 @@ public class SpaceShipMouvement : MonoBehaviour
                 life--;
                 lifeText.text = "Life : " + life;
                 UpdateLifeIcons();
-                animator.runtimeAnimatorController = bananaAnimators[3 - life];
+                if (3 - life >= 0)
+                {
+                    animator.runtimeAnimatorController = bananaAnimators[3 - life];
+                }
                 if (FeatureManager.instance.isSpriteOn)
                 {
                     shipSkin.ChangeBananaState();

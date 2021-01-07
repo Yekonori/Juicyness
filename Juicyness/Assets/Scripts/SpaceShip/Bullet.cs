@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class Bullet : MonoBehaviour
     private bool isInSkull = false;
     private Transform bananaEater;
     private Animator animator;
+
+    [SerializeField] private GameObject smokeParticles;
+    private bool bulletCollision = false;
 
     // Start is called before the first frame update
     void Start()
@@ -30,7 +34,7 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameManager.instance.canPlay)
+        if (GameManager.instance.canPlay && !bulletCollision)
         {
             transform.position += Vector3.up * speed * Time.deltaTime;
             if (isInSkull && transform.position.y > bananaEater.position.y + 0.35f)
@@ -82,6 +86,14 @@ public class Bullet : MonoBehaviour
                     ScoreManager.instance.ChangeScore(collision.GetComponent<Enemy>().enemyValue);
                     collision.GetComponent<Enemy>().Die();
                 }
+                else
+                {
+                    if (FeatureManager.instance.isParticleEffectsOn)
+                    {
+                        smokeParticles.SetActive(true);
+                        bulletCollision = true;
+                    }
+                }
             }
         }
         else
@@ -106,7 +118,22 @@ public class Bullet : MonoBehaviour
         }
         else
         {
-            Destroy(this.gameObject);
+            if (bulletCollision)
+            {
+                GetComponent<SpriteRenderer>().enabled = false;
+                GetComponent<CapsuleCollider2D>().enabled = false;
+                StartCoroutine(WaitAndDestroy());
+            }
+            else
+            {
+                Destroy(this.gameObject);
+            }
         }
+    }
+
+    IEnumerator WaitAndDestroy()
+    {
+        yield return new WaitForSeconds(0.3f);
+        Destroy(this.gameObject);
     }
 }
