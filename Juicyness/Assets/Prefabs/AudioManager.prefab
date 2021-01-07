@@ -57,7 +57,7 @@ MonoBehaviour:
   - clipName: EnemyShoot
     clip:
     - {fileID: 8300000, guid: 780d02aeadac85248be2c59ab1caaec7, type: 3}
-    volume: 1
+    volume: 0.1
     priority: 0
     loop: 0
     numberOfAudioSourceAvailable: 5
@@ -75,7 +75,7 @@ MonoBehaviour:
   - clipName: EnemyDamaged
     clip:
     - {fileID: 8300000, guid: 24efe234dda43c147ab45d2ce6d2f948, type: 3}
-    volume: 1
+    volume: 0.1
     priority: 0
     loop: 0
     numberOfAudioSourceAvailable: 3
@@ -102,7 +102,7 @@ MonoBehaviour:
   - clipName: BananaDie
     clip:
     - {fileID: 8300000, guid: eb884aa4890a26b4d88faa74fd892b5f, type: 3}
-    volume: 1
+    volume: 0.1
     priority: 0
     loop: 0
     numberOfAudioSourceAvailable: 1
@@ -111,7 +111,7 @@ MonoBehaviour:
   - clipName: BananaShoot
     clip:
     - {fileID: 8300000, guid: 23f9f95ad0f4e8648bc1e4e2803e178a, type: 3}
-    volume: 1
+    volume: 0.3
     priority: 0
     loop: 0
     numberOfAudioSourceAvailable: 1
@@ -138,7 +138,7 @@ MonoBehaviour:
   - clipName: Teeth
     clip:
     - {fileID: 8300000, guid: 8e73b64ac4d615f419882cab29ab2d6f, type: 3}
-    volume: 1
+    volume: 0.5
     priority: 0
     loop: 0
     numberOfAudioSourceAvailable: 1
