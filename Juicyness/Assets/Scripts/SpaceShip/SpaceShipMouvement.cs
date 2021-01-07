@@ -14,6 +14,8 @@ public class SpaceShipMouvement : MonoBehaviour
     [SerializeField] private SpaceShipSkin shipSkin;
     private Animator animator;
 
+    private GameObject enemy;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -92,30 +94,33 @@ public class SpaceShipMouvement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            life--;
-            lifeText.text = "Life : " + life;
-            UpdateLifeIcons();
-            if (FeatureManager.instance.isSpriteOn)
+            if (enemy != collision.transform.parent.gameObject)
             {
-                shipSkin.ChangeBananaState();
-            }
-
-            if (life <= 0)
-            {
-                AudioManager.instance.Play("BananaDie");
-                GameManager.instance.LooseProcess();
-                Destroy(gameObject);
-            }
-            else
-            {
-                AudioManager.instance.Play("BananaDamaged");
-                if (FeatureManager.instance.isCameraEffectsOn)
+                enemy = collision.transform.parent.gameObject;
+                life--;
+                lifeText.text = "Life : " + life;
+                UpdateLifeIcons();
+                if (FeatureManager.instance.isSpriteOn)
                 {
-                    Camera.main.GetComponent<CameraShake>().ShakeCamera(0.2f, 0.1f);
-                    InterfaceManager.instance.ActivateDamageEffect();
+                    shipSkin.ChangeBananaState();
+                }
+
+                if (life <= 0)
+                {
+                    AudioManager.instance.Play("BananaDie");
+                    GameManager.instance.LooseProcess();
+                    Destroy(gameObject);
+                }
+                else
+                {
+                    AudioManager.instance.Play("BananaDamaged");
+                    if (FeatureManager.instance.isCameraEffectsOn)
+                    {
+                        Camera.main.GetComponent<CameraShake>().ShakeCamera(0.2f, 0.1f);
+                        InterfaceManager.instance.ActivateDamageEffect();
+                    }
                 }
             }
-            //TODO ELSE FEEDBACK, INVINCIBILITY ?????
         }
     }
 

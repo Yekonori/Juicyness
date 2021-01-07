@@ -1,12 +1,16 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
-
+    [Header("Shoot")]
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform bulletSpawner;
+
+    [Header("FeedBacks")]
     [SerializeField] private GameObject particleExplosion;
+    [SerializeField] private GameObject scoreText;
 
     private EnemyMouvementManager mouvementManager;
     [HideInInspector] public float enemyValue;
@@ -20,7 +24,7 @@ public class Enemy : MonoBehaviour
     private float enemyWidth;
     private Vector3 screenBounds;
 
-
+    [Header("Visual")]
     private Animator animator;
     [SerializeField] private Sprite originalSprite;
     [SerializeField] private Sprite coolSprite;
@@ -122,9 +126,9 @@ public class Enemy : MonoBehaviour
     public void Die()
     {
         AudioManager.instance.Play("EnemyDamaged");
+        collider.enabled = false;
         if (FeatureManager.instance.isAnimationOn)
         {
-            collider.enabled = false;
             StartCoroutine(DieAnimations());
         }
         else
@@ -136,7 +140,11 @@ public class Enemy : MonoBehaviour
             {
                 particleExplosion.SetActive(true);
             }
-            spriteRenderer.enabled = false;
+            if (FeatureManager.instance.isUIEffecstOn)
+            {
+                scoreText.GetComponent<Text>().text = "+" + enemyValue;
+                scoreText.SetActive(true);
+            }
             StopAllCoroutines();
             StartCoroutine(WaitAndDestroy());
         }
@@ -154,7 +162,11 @@ public class Enemy : MonoBehaviour
         {
             particleExplosion.SetActive(true);
         }
-        spriteRenderer.enabled = false;
+        if (FeatureManager.instance.isUIEffecstOn)
+        {
+            scoreText.GetComponent<Text>().text = "+" + enemyValue;
+            scoreText.SetActive(true);
+        }
         StopAllCoroutines();
         StartCoroutine(WaitAndDestroy());
     }
