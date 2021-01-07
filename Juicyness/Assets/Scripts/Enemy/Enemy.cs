@@ -77,7 +77,7 @@ public class Enemy : MonoBehaviour
                     canShoot = true;
                 }
 
-                Animator.SetBool("IsShooting", false);
+                animator.SetBool("IsShooting", false);
             }
             if (canShoot)
             {
@@ -113,7 +113,7 @@ public class Enemy : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
         if (GameManager.instance.canPlay)
         {
-            Animator.SetBool("IsShooting", true);
+            animator.SetBool("IsShooting", true);
 
             AudioManager.instance.Play("EnemyShoot");
             Instantiate(bulletPrefab, bulletSpawner.position, Quaternion.identity);
