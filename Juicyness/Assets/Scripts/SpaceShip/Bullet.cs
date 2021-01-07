@@ -62,6 +62,14 @@ public class Bullet : MonoBehaviour
                 return;
             }
         }
-        Destroy(this.gameObject);
+
+        if (isEnemyBullet)
+        {
+            Destroy(this.transform.parent.gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
     }
 }
