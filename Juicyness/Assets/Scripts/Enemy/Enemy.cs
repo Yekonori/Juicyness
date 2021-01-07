@@ -127,6 +127,7 @@ public class Enemy : MonoBehaviour
 
     public void Die()
     {
+        StopAllCoroutines();
         collider.enabled = false;
         if (FeatureManager.instance.isAnimationOn)
         {
@@ -136,6 +137,10 @@ public class Enemy : MonoBehaviour
         }
         else
         {
+            if (FeatureManager.instance.isCameraEffectsOn)
+            {
+                InterfaceManager.instance.ActivateKillEffect();
+            }
             spriteMask.enabled = false;
             AudioManager.instance.Play("EnemyDamagedNoAnim", 1 + Random.Range(-0.2f, 0.2f));
             mouvementManager.enemies.Remove(gameObject);
@@ -171,6 +176,10 @@ public class Enemy : MonoBehaviour
 
     public void DeathAnimOver()
     {
+        if (FeatureManager.instance.isCameraEffectsOn)
+        {
+            InterfaceManager.instance.ActivateKillEffect();
+        }
         mouvementManager.enemies.Remove(gameObject);
         mouvementManager.CheckIfNoMoreEnemies();
         if (FeatureManager.instance.isParticleEffectsOn)

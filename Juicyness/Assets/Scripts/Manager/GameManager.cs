@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum State
 {
@@ -15,11 +16,14 @@ public class GameManager : MonoBehaviour
     public State state;
     public System.Action onStateChange;
     public System.Action onPlayerAssigned;
+    public System.Action onNewGame;
 
     public bool canPlay;
 
     public GameObject player;
     [HideInInspector] public float numberOfEnemyLines = 0;
+
+    private bool canPlayAgain = false;
 
     private void Awake()
     {
@@ -44,6 +48,7 @@ public class GameManager : MonoBehaviour
             else
             {
                 canPlay = false;
+                canPlayAgain = true;
             }
         };
         ChangeState(State.INGAME);
@@ -52,7 +57,18 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (canPlayAgain)
+        {
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                canPlayAgain = false;
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
+            else if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                Application.Quit();
+            }
+        }
     }
 
     public void ChangeState(State newState)
@@ -66,6 +82,8 @@ public class GameManager : MonoBehaviour
         numberOfEnemyLines--;
         if(numberOfEnemyLines == 0)
         {
+            InterfaceManager.instance.DeactivateEffects();
+            AudioManager.instance.Stop("Music");
             AudioManager.instance.Play("Win");
             if (!FeatureManager.instance.isCameraEffectsOn)
             {
@@ -81,8 +99,9 @@ public class GameManager : MonoBehaviour
 
     public void LooseProcess()
     {
-
+        InterfaceManager.instance.DeactivateEffects();
         AudioManager.instance.Play("Lose");
+        AudioManager.instance.Stop("Music");
         canPlay = false;
         if (FeatureManager.instance.isCameraEffectsOn)
         {

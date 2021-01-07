@@ -6,19 +6,27 @@ public class InterfaceManager : MonoBehaviour
 {
     public static InterfaceManager instance;
 
+    [Header("Panels")]
     [SerializeField] private GameObject gamePanel;
     [SerializeField] private GameObject winPanel;
     [SerializeField] private GameObject loosePanel;
     [SerializeField] private GameObject controlPanel;
-    [Header("DangerEffect")]
+    [Header("DamageEffect")]
     [SerializeField] private Image damageEffect;
     [SerializeField] private float timeForDamageEffectToDisappear = 0.25f;
-    [Header("DangerEffect")]
-    [SerializeField] private Image dangerEffect;
     private float damageEffectLerpTimer = 0;
     private Color damageEffectBaseColor;
     private Color damageEffectfullAlphaColor;
-    private bool canLerpDamagerEffect = false;
+    private bool canLerpDamageEffect = false;
+    [Header("KillEffect")]
+    [SerializeField] private Image killEffect;
+    [SerializeField] private float timeForKillEffectToDisappear = 0.25f; 
+    private float killEffectLerpTimer = 0;
+    private Color killEffectBaseColor;
+    private Color killEffectfullAlphaColor;
+    private bool canLerpKillEffect = false;
+    [Header("DangerEffect")]
+    [SerializeField] private Image dangerEffect;
 
     private void Awake()
     {
@@ -58,9 +66,14 @@ public class InterfaceManager : MonoBehaviour
         };
 
         GoToGame();
+
         damageEffectBaseColor = damageEffect.color;
         damageEffectfullAlphaColor = damageEffectBaseColor;
         damageEffectfullAlphaColor.a = 0.35f;
+
+        killEffectBaseColor = killEffect.color;
+        killEffectfullAlphaColor = killEffectBaseColor;
+        killEffectfullAlphaColor.a = 0.35f;
     }
 
     // Update is called once per frame
@@ -68,15 +81,26 @@ public class InterfaceManager : MonoBehaviour
     {
         if (GameManager.instance.canPlay)
         {
-            if (canLerpDamagerEffect)
+            if (canLerpDamageEffect)
             {
                 damageEffectLerpTimer += Time.deltaTime / timeForDamageEffectToDisappear;
                 damageEffect.color = Color.Lerp(damageEffectfullAlphaColor, damageEffectBaseColor, damageEffectLerpTimer);
                 if(damageEffectLerpTimer >= 1)
                 {
-                    canLerpDamagerEffect = false;
+                    canLerpDamageEffect = false;
                 }
             }
+
+            if (canLerpKillEffect)
+            {
+                killEffectLerpTimer += Time.deltaTime / timeForKillEffectToDisappear;
+                killEffect.color = Color.Lerp(killEffectfullAlphaColor, killEffectBaseColor, killEffectLerpTimer);
+                if (killEffectLerpTimer >= 1)
+                {
+                    canLerpKillEffect = false;
+                }
+            }
+
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 if (controlPanel.activeSelf)
@@ -123,7 +147,20 @@ public class InterfaceManager : MonoBehaviour
     {
         damageEffectLerpTimer = 0;
         damageEffect.color = damageEffectfullAlphaColor;
-        canLerpDamagerEffect = true;
+        canLerpDamageEffect = true;
+    }
+
+    public void ActivateKillEffect()
+    {
+        killEffectLerpTimer = 0;
+        killEffect.color = killEffectfullAlphaColor;
+        canLerpKillEffect = true;
+    }
+
+    public void DeactivateEffects()
+    {
+        killEffect.gameObject.SetActive(false);
+        damageEffect.gameObject.SetActive(false);
     }
 
     public void Quit()
