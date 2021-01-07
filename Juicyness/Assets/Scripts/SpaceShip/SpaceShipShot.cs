@@ -27,8 +27,9 @@ public class SpaceShipShot : MonoBehaviour
     {
         if (GameManager.instance.canPlay)
         {
-            if (Input.GetMouseButtonDown(0) && canShoot)
+            if (Input.GetKeyDown(KeyCode.Space) && canShoot)
             {
+                print("lkjnd");
                 canShoot = false;
 
                 Animator.SetBool("IsShooting", true);
