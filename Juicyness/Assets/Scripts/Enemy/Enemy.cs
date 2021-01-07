@@ -119,6 +119,7 @@ public class Enemy : MonoBehaviour
             particleExplosion.SetActive(true);
         }
         spriteRenderer.enabled = false;
+        StopAllCoroutines();
         StartCoroutine(WaitAndDestroy());
     }
 

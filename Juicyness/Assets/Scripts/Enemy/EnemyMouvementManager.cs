@@ -18,7 +18,6 @@ public class EnemyMouvementManager : MonoBehaviour
     {
         enemies = new List<GameObject>();
         enemyManager = transform.parent.GetComponent<EnemyManager>();
-        enemyManager.enemiesMouvementManager.Add(this);
     }
     private void Start()
     {
