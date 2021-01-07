@@ -88,10 +88,10 @@ public class Bullet : MonoBehaviour
                 }
                 else
                 {
+                    bulletCollision = true;
                     if (FeatureManager.instance.isParticleEffectsOn)
                     {
                         smokeParticles.SetActive(true);
-                        bulletCollision = true;
                     }
                 }
             }
@@ -120,9 +120,18 @@ public class Bullet : MonoBehaviour
         {
             if (bulletCollision)
             {
-                GetComponent<SpriteRenderer>().enabled = false;
-                GetComponent<CapsuleCollider2D>().enabled = false;
-                StartCoroutine(WaitAndDestroy());
+                if (FeatureManager.instance.isAnimationOn)
+                {
+                    print("miam");
+                    animator.SetTrigger("isCooked"); 
+                    StartCoroutine(WaitAndDestroy(0.8f));
+                }
+                else
+                {
+                    print("oh no");
+                    GetComponent<SpriteRenderer>().enabled = false;
+                    StartCoroutine(WaitAndDestroy(0.3f));
+                }
             }
             else
             {
@@ -131,9 +140,10 @@ public class Bullet : MonoBehaviour
         }
     }
 
-    IEnumerator WaitAndDestroy()
+    IEnumerator WaitAndDestroy(float waitTime)
     {
-        yield return new WaitForSeconds(0.3f);
+        print("hold on");
+        yield return new WaitForSeconds(waitTime);
         Destroy(this.gameObject);
     }
 }
