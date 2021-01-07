@@ -12,6 +12,7 @@ public class Bullet : MonoBehaviour
     private CapsuleCollider2D collider;
     private bool isInSkull = false;
     private Transform bananaEater;
+    private Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,7 @@ public class Bullet : MonoBehaviour
         {
             trail.enabled = true;
         }
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -40,9 +42,14 @@ public class Bullet : MonoBehaviour
         if (FeatureManager.instance.isSpriteOn)
         {
             spriteRenderer.sprite = coolSprite;
+            if (FeatureManager.instance.isAnimationOn && animator != null)
+            {
+                animator.enabled = true;
+            }
         }
         else
         {
+            if (animator != null) animator.enabled = false;
             spriteRenderer.sprite = baseSprite;
         }
 

@@ -109,7 +109,14 @@ public class SpaceShipMouvement : MonoBehaviour
                 {
                     AudioManager.instance.Play("BananaDie");
                     GameManager.instance.LooseProcess();
-                    Destroy(gameObject);
+                    if (FeatureManager.instance.isAnimationOn)
+                    {
+                        animator.SetBool("isDead", true);
+                    }
+                    else
+                    {
+                        Destroy(gameObject);
+                    }
                 }
                 else
                 {
@@ -128,5 +135,10 @@ public class SpaceShipMouvement : MonoBehaviour
     {
         lifeIcons.transform.GetChild(life).GetComponent<Animation>().Play();
         //lifeIcons.transform.GetChild(life).gameObject.SetActive(false);
+    }
+
+    public void LooseAfterDeath()
+    {
+        GameManager.instance.ChangeState(State.LOOSE);
     }
 }
