@@ -5048,7 +5048,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf3b9827118a7f346b713938f93e9d4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 8328235509571621004, guid: d981eb0e83fed244cbcce60130eaedbd,
+  bulletPrefab: {fileID: 4345518278043199491, guid: d95f575632d791f4f93373bcc966b1f9,
     type: 3}
   bulletSpawner: {fileID: 7970150144431151524}
   particleExplosion: {fileID: 434603361}
