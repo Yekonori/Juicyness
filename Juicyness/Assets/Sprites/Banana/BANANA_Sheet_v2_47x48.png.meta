@@ -1,7 +1,139 @@
 fileFormatVersion: 2
 guid: 53fa5310dd9900b448e84f838beb08a8
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -232785609020611068
+    second: BANANA_Sheet_v2_47x48_0
+  - first:
+      213: 3825766048141448741
+    second: BANANA_Sheet_v2_47x48_1
+  - first:
+      213: 5534214152927750778
+    second: BANANA_Sheet_v2_47x48_2
+  - first:
+      213: -7000700191419457045
+    second: BANANA_Sheet_v2_47x48_3
+  - first:
+      213: -6590913057720704444
+    second: BANANA_Sheet_v2_47x48_4
+  - first:
+      213: 4087570566914708532
+    second: BANANA_Sheet_v2_47x48_5
+  - first:
+      213: -3006125664414837246
+    second: BANANA_Sheet_v2_47x48_6
+  - first:
+      213: -6577907392353701047
+    second: BANANA_Sheet_v2_47x48_7
+  - first:
+      213: -6517444955139108958
+    second: BANANA_Sheet_v2_47x48_8
+  - first:
+      213: -1737041333658293465
+    second: BANANA_Sheet_v2_47x48_9
+  - first:
+      213: -2314864488801620448
+    second: BANANA_Sheet_v2_47x48_10
+  - first:
+      213: 4028597699372349695
+    second: BANANA_Sheet_v2_47x48_11
+  - first:
+      213: -2277008805175306720
+    second: BANANA_Sheet_v2_47x48_12
+  - first:
+      213: 6880939308653982026
+    second: BANANA_Sheet_v2_47x48_13
+  - first:
+      213: 106755568912250875
+    second: BANANA_Sheet_v2_47x48_14
+  - first:
+      213: 4857239974463124270
+    second: BANANA_Sheet_v2_47x48_15
+  - first:
+      213: 1296713445337320095
+    second: BANANA_Sheet_v2_47x48_16
+  - first:
+      213: -1763567884845553145
+    second: BANANA_Sheet_v2_47x48_17
+  - first:
+      213: 1507410992690047545
+    second: BANANA_Sheet_v2_47x48_18
+  - first:
+      213: -7349099195924438797
+    second: BANANA_Sheet_v2_47x48_19
+  - first:
+      213: -8915980364197784879
+    second: BANANA_Sheet_v2_47x48_20
+  - first:
+      213: 7485102497061543626
+    second: BANANA_Sheet_v2_47x48_21
+  - first:
+      213: 873703654245169071
+    second: BANANA_Sheet_v2_47x48_22
+  - first:
+      213: 5248217535990731232
+    second: BANANA_Sheet_v2_47x48_23
+  - first:
+      213: 3568240332009159523
+    second: BANANA_Sheet_v2_47x48_24
+  - first:
+      213: 7403381789519131318
+    second: BANANA_Sheet_v2_47x48_25
+  - first:
+      213: 8925630785911685101
+    second: BANANA_Sheet_v2_47x48_26
+  - first:
+      213: 8566022778495867328
+    second: BANANA_Sheet_v2_47x48_27
+  - first:
+      213: -8800210330228937207
+    second: BANANA_Sheet_v2_47x48_28
+  - first:
+      213: 7317554136187901327
+    second: BANANA_Sheet_v2_47x48_29
+  - first:
+      213: -890329084066990292
+    second: BANANA_Sheet_v2_47x48_30
+  - first:
+      213: -6796354272783320923
+    second: BANANA_Sheet_v2_47x48_31
+  - first:
+      213: 77812268248526195
+    second: BANANA_Sheet_v2_47x48_32
+  - first:
+      213: 9022908759222658225
+    second: BANANA_Sheet_v2_47x48_33
+  - first:
+      213: -4857403748951225250
+    second: BANANA_Sheet_v2_47x48_34
+  - first:
+      213: 7505365402585704018
+    second: BANANA_Sheet_v2_47x48_35
+  - first:
+      213: 6712845599621472324
+    second: BANANA_Sheet_v2_47x48_36
+  - first:
+      213: -8184343651102615059
+    second: BANANA_Sheet_v2_47x48_37
+  - first:
+      213: 5188637433253268868
+    second: BANANA_Sheet_v2_47x48_38
+  - first:
+      213: 1014803765798838475
+    second: BANANA_Sheet_v2_47x48_39
+  - first:
+      213: -6221173906792617041
+    second: BANANA_Sheet_v2_47x48_40
+  - first:
+      213: -5527723882538485643
+    second: BANANA_Sheet_v2_47x48_41
+  - first:
+      213: 8824526181002954558
+    second: BANANA_Sheet_v2_47x48_42
+  - first:
+      213: -7042355562317366915
+    second: BANANA_Sheet_v2_47x48_43
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -40,7 +172,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -71,9 +203,945 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: BANANA_Sheet_v2_47x48_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 207
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 406e081d8baf4ccf0800000000000000
+      internalID: -232785609020611068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BANANA_Sheet_v2_47x48_1
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 207
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 526983573f9d71530800000000000000
+      internalID: 3825766048141448741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BANANA_Sheet_v2_47x48_2
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 207
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7aa238537a7dcc40800000000000000
+      internalID: 5534214152927750778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BANANA_Sheet_v2_47x48_3
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 207
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be12f67644488de90800000000000000
+      internalID: -7000700191419457045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BANANA_Sheet_v2_47x48_4
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 207
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 442e2118e7f5884a0800000000000000
+      internalID: -6590913057720704444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BANANA_Sheet_v2_47x48_5
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 207
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4341b4316c7f9b830800000000000000
+      internalID: 4087570566914708532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BANANA_Sheet_v2_47x48_6
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 207
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2065e56a2a81846d0800000000000000
+      internalID: -3006125664414837246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BANANA_Sheet_v2_47x48_7
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 207
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9437751f31496b4a0800000000000000
+      internalID: -6577907392353701047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BANANA_Sheet_v2_47x48_8
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 207
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2af85cd18526d85a0800000000000000
+      internalID: -6517444955139108958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BANANA_Sheet_v2_47x48_9
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 207
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72b602b3c1ac4e7e0800000000000000
+      internalID: -1737041333658293465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BANANA_Sheet_v2_47x48_10
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 207
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02e20d91303ffdfd0800000000000000
+      internalID: -2314864488801620448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BANANA_Sheet_v2_47x48_11
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 207
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff87b0e534478e730800000000000000
+      internalID: 4028597699372349695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BANANA_Sheet_v2_47x48_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 159
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 026d6194e807660e0800000000000000
+      internalID: -2277008805175306720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BANANA_Sheet_v2_47x48_13
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 159
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a41b75d28d10e7f50800000000000000
+      internalID: 6880939308653982026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BANANA_Sheet_v2_47x48_14
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 159
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf73fc2df954b7100800000000000000
+      internalID: 106755568912250875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BANANA_Sheet_v2_47x48_15
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 159
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e23b3b2a502686340800000000000000
+      internalID: 4857239974463124270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BANANA_Sheet_v2_47x48_16
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 159
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9acdcc120adef110800000000000000
+      internalID: 1296713445337320095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BANANA_Sheet_v2_47x48_17
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 159
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70a6e7e3a5c8687e0800000000000000
+      internalID: -1763567884845553145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BANANA_Sheet_v2_47x48_18
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 159
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93a2fcdaf466be410800000000000000
+      internalID: 1507410992690047545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BANANA_Sheet_v2_47x48_19
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 159
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f0a0dfe731c20a90800000000000000
+      internalID: -7349099195924438797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BANANA_Sheet_v2_47x48_20
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 159
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d212aff813144480800000000000000
+      internalID: -8915980364197784879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BANANA_Sheet_v2_47x48_21
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 159
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ace1eb4301d60e760800000000000000
+      internalID: 7485102497061543626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BANANA_Sheet_v2_47x48_22
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 159
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa77e3e28d4002c00800000000000000
+      internalID: 873703654245169071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BANANA_Sheet_v2_47x48_23
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 159
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e114b0fa0a65d840800000000000000
+      internalID: 5248217535990731232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BANANA_Sheet_v2_47x48_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 111
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36bb0a63dafe48130800000000000000
+      internalID: 3568240332009159523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BANANA_Sheet_v2_47x48_25
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 111
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b232e443881eb660800000000000000
+      internalID: 7403381789519131318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BANANA_Sheet_v2_47x48_26
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 111
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: def7e86e8e53edb70800000000000000
+      internalID: 8925630785911685101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BANANA_Sheet_v2_47x48_27
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 111
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c996221550a0e670800000000000000
+      internalID: 8566022778495867328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BANANA_Sheet_v2_47x48_28
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 111
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90e2bf5845f5fd580800000000000000
+      internalID: -8800210330228937207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BANANA_Sheet_v2_47x48_29
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 111
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f859b2087bc2d8560800000000000000
+      internalID: 7317554136187901327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BANANA_Sheet_v2_47x48_30
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 111
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c27fcfa4a6ae4a3f0800000000000000
+      internalID: -890329084066990292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BANANA_Sheet_v2_47x48_31
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 111
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a8ba0b2ccf7ea1a0800000000000000
+      internalID: -6796354272783320923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BANANA_Sheet_v2_47x48_32
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 111
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37dee1088d1741100800000000000000
+      internalID: 77812268248526195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BANANA_Sheet_v2_47x48_33
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 111
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b42a3a06bfc73d70800000000000000
+      internalID: 9022908759222658225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BANANA_Sheet_v2_47x48_34
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 111
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5c8c15a609079cb0800000000000000
+      internalID: -4857403748951225250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BANANA_Sheet_v2_47x48_35
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 111
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 256a0aa811a682860800000000000000
+      internalID: 7505365402585704018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BANANA_Sheet_v2_47x48_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 63
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4406b75b181d82d50800000000000000
+      internalID: 6712845599621472324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BANANA_Sheet_v2_47x48_37
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 63
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de91e44dfce5b6e80800000000000000
+      internalID: -8184343651102615059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BANANA_Sheet_v2_47x48_38
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 63
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48d0b55414eb10840800000000000000
+      internalID: 5188637433253268868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BANANA_Sheet_v2_47x48_39
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 63
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc02b29f5ae451e00800000000000000
+      internalID: 1014803765798838475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BANANA_Sheet_v2_47x48_40
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 63
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fab62bffa43f9a9a0800000000000000
+      internalID: -6221173906792617041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BANANA_Sheet_v2_47x48_41
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 63
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 578b9dc7a649943b0800000000000000
+      internalID: -5527723882538485643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BANANA_Sheet_v2_47x48_42
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 63
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e37c0d9aec3077a70800000000000000
+      internalID: 8824526181002954558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BANANA_Sheet_v2_47x48_43
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 15
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d79b3169de6844e90800000000000000
+      internalID: -7042355562317366915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
