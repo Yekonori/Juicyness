@@ -29,6 +29,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private Sprite originalSprite;
     [SerializeField] private Sprite coolSprite;
     private SpriteRenderer spriteRenderer;
+    [SerializeField] private SpriteMask spriteMask;
 
     private BoxCollider2D collider;
 
@@ -135,6 +136,7 @@ public class Enemy : MonoBehaviour
         }
         else
         {
+            spriteMask.enabled = false;
             AudioManager.instance.Play("EnemyDamagedNoAnim", 1 + Random.Range(-0.2f, 0.2f));
             mouvementManager.enemies.Remove(gameObject);
             mouvementManager.CheckIfNoMoreEnemies();
