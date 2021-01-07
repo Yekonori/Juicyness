@@ -16,10 +16,12 @@ public class FeatureManager : MonoBehaviour
     [HideInInspector] public bool isUIEffecstOn = false;
     [HideInInspector] public bool isMusicOn = false;
     [HideInInspector] public bool isSpriteOn = false;
+    [HideInInspector] public bool isAnimationOn = false;
 
     public System.Action onCameraTiltedToggle;
     public System.Action onUIEffectsToggle;
     public System.Action onSpritesToggle;
+    public System.Action onAnimationsToggle;
 
     [Header("Camera Settings")]
     [SerializeField] private Vector3 cameraBasePosition;
@@ -69,7 +71,8 @@ public class FeatureManager : MonoBehaviour
                         break;
                     case "3":
                     case @"""":
-                        print("Third feature");
+                        print("Third feature : Animations");
+                        ToggleAnimations();
                         break;
                     case "4":
                     case "'":
@@ -107,6 +110,20 @@ public class FeatureManager : MonoBehaviour
     {
         isSpriteOn = !isSpriteOn;
         if (onSpritesToggle != null) onSpritesToggle.Invoke();
+    }
+
+    public void ToggleAnimations()
+    {
+        isAnimationOn = !isAnimationOn;
+        if (isAnimationOn)
+        {
+            if (!isSpriteOn)
+            {
+                isSpriteOn = true;
+                if (onSpritesToggle != null) onSpritesToggle.Invoke();
+            }
+        }
+        if (onAnimationsToggle != null) onAnimationsToggle.Invoke();
     }
 
     public void ToggleCameraEffects()

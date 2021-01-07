@@ -48,13 +48,24 @@ public class SpaceShipMouvement : MonoBehaviour
             {
                 shipSkin.SetBananaState(3 - life);
                 shipSkin.ChangeBananaSprite();
-                animator.enabled = true;
             }
             else
             {
                 shipSkin.SetBananaState(4);
                 shipSkin.ChangeBananaSprite();
                 animator.enabled = false;
+            }
+        };
+        FeatureManager.instance.onAnimationsToggle += () =>
+        {
+            if (FeatureManager.instance.isAnimationOn)
+            {
+                animator.enabled = true;
+            }
+            else
+            {
+                animator.enabled = false;
+                shipSkin.SetBananaState(4);
             }
         };
     }

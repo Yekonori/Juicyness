@@ -5029,8 +5029,10 @@ MonoBehaviour:
   originalSprite: {fileID: 21300000, guid: f4e8d8dc0a3d3824e9a4e3b4ae438abe, type: 3}
   yellowBanana: {fileID: -7917089392847538225, guid: 7cb5473464677684fa9c7f69c35d553a,
     type: 3}
-  brownBanana: {fileID: 0}
-  badBanana: {fileID: 0}
+  brownBanana: {fileID: -2277008805175306720, guid: 53fa5310dd9900b448e84f838beb08a8,
+    type: 3}
+  badBanana: {fileID: 3568240332009159523, guid: 53fa5310dd9900b448e84f838beb08a8,
+    type: 3}
   damagedEffectDuration: 1
   damagedEffectGap: 0.1
 --- !u!95 &3076453403116200827
