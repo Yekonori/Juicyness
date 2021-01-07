@@ -15,9 +15,11 @@ public class FeatureManager : MonoBehaviour
     [HideInInspector] public bool isSoundEffectOn = false;
     [HideInInspector] public bool isUIEffecstOn = false;
     [HideInInspector] public bool isMusicOn = false;
+    [HideInInspector] public bool isSpriteOn = false;
 
     public System.Action onCameraTiltedToggle;
     public System.Action onUIEffectsToggle;
+    public System.Action onSpritesToggle;
 
     [Header("Camera Settings")]
     [SerializeField] private Vector3 cameraBasePosition;
@@ -57,7 +59,8 @@ public class FeatureManager : MonoBehaviour
                 {
                     case "1":
                     case "&":
-                        PlayerBecomesBlack();
+                        print("Second feature : Sprites");
+                        ToggleSprites();
                         break;
                     case "2":
                     case "é":
@@ -100,18 +103,10 @@ public class FeatureManager : MonoBehaviour
         }
     }
 
-    public void PlayerBecomesBlack()
+    public void ToggleSprites()
     {
-        if (!isPlayerBlack)
-        {
-            isPlayerBlack = true;
-            player.GetComponent<SpriteRenderer>().color = Color.black;
-        }
-        else
-        {
-            isPlayerBlack = false;
-            player.GetComponent<SpriteRenderer>().color = Color.yellow;
-        }
+        isSpriteOn = !isSpriteOn;
+        if (onSpritesToggle != null) onSpritesToggle.Invoke();
     }
 
     public void ToggleCameraEffects()

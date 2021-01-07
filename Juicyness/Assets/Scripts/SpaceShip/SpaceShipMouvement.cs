@@ -12,6 +12,7 @@ public class SpaceShipMouvement : MonoBehaviour
     private float playerWidth;
 
     [SerializeField] private SpaceShipSkin shipSkin;
+    private Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +23,10 @@ public class SpaceShipMouvement : MonoBehaviour
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
         playerWidth = GetComponent<SpriteRenderer>().bounds.size.x;
 
+        shipSkin.SetBananaState(4);
         shipSkin.ChangeBananaSprite();
+
+        animator = GetComponent<Animator>();
 
         FeatureManager.instance.onUIEffectsToggle += () =>
         {
@@ -35,6 +39,22 @@ public class SpaceShipMouvement : MonoBehaviour
             {
                 lifeText.gameObject.SetActive(true);
                 lifeIcons.SetActive(false);
+            }
+        };
+
+        FeatureManager.instance.onSpritesToggle += () =>
+        {
+            if (FeatureManager.instance.isSpriteOn)
+            {
+                shipSkin.SetBananaState(3 - life);
+                shipSkin.ChangeBananaSprite();
+                animator.enabled = true;
+            }
+            else
+            {
+                shipSkin.SetBananaState(4);
+                shipSkin.ChangeBananaSprite();
+                animator.enabled = false;
             }
         };
     }
@@ -64,7 +84,10 @@ public class SpaceShipMouvement : MonoBehaviour
             life--;
             lifeText.text = "Life : " + life;
             UpdateLifeIcons();
-            shipSkin.ChangeBananaState();
+            if (FeatureManager.instance.isSpriteOn)
+            {
+                shipSkin.ChangeBananaState();
+            }
 
             if (life <= 0)
             {

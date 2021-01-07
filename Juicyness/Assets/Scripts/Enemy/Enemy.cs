@@ -18,7 +18,10 @@ public class Enemy : MonoBehaviour
     private float enemyWidth;
     private Vector3 screenBounds;
 
-    private Animator Animator;
+
+    private Animator animator;
+    [SerializeField] private Sprite originalSprite;
+    private SpriteRenderer spriteRenderer;
 
     // Start is called before the first frame update
     void Start()
@@ -30,8 +33,26 @@ public class Enemy : MonoBehaviour
         maxShootTime = mouvementManager.maxShootTime;
         enemyWidth = GetComponent<SpriteRenderer>().bounds.size.x;
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
+        animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        animator.enabled = false;
+        spriteRenderer.sprite = originalSprite;
 
-        Animator = GetComponent<Animator>();
+        FeatureManager.instance.onSpritesToggle += () =>
+        {
+            if (this)
+            {
+                if (FeatureManager.instance.isSpriteOn)
+                {
+                    animator.enabled = true;
+                }
+                else
+                {
+                    animator.enabled = false;
+                    spriteRenderer.sprite = originalSprite;
+                }
+            }
+        };
     }
 
     // Update is called once per frame

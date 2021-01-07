@@ -46,6 +46,11 @@ public class SpaceShipSkin : MonoBehaviour
         eBananaState = eBananaState.ORIGINAL;
     }
 
+    public void SetBananaState(int state)
+    {
+        eBananaState = (eBananaState)state;
+    }
+
     public void ChangeBananaState()
     {
         switch (eBananaState)
