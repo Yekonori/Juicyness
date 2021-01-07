@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class CameraMouvement : MonoBehaviour
 {
-    [SerializeField] private Vector3 cameraBasePosition;
+    public Vector3 cameraBasePosition;
     [SerializeField] private Vector3 cameraBaseRotation;
-    [SerializeField] private Vector3 cameraTiltedPosition;
+    public Vector3 cameraTiltedPosition;
     [SerializeField] private Vector3 cameraTiltedRotation;
 
     private bool canCenterOnPlayer;

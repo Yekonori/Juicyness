@@ -22,6 +22,7 @@ public class FeatureManager : MonoBehaviour
     public System.Action onUIEffectsToggle;
     public System.Action onSpritesToggle;
     public System.Action onAnimationsToggle;
+    public System.Action onCameraEffectToggle;
 
     [Header("Camera Settings")]
     [SerializeField] private Vector3 cameraBasePosition;
@@ -129,6 +130,7 @@ public class FeatureManager : MonoBehaviour
     public void ToggleCameraEffects()
     {
         isCameraEffectsOn = !isCameraEffectsOn;
+        if (onCameraEffectToggle != null) onCameraEffectToggle.Invoke();
     }
 
     public void ToggleCameraTiltingEffect()

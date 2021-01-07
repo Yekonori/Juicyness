@@ -15,6 +15,7 @@ public class CameraShake : MonoBehaviour
 	private bool canShake;
 
 	Vector3 originalPos;
+	private CameraMouvement cameraMouvement;
 
 	void Awake()
 	{
@@ -26,12 +27,24 @@ public class CameraShake : MonoBehaviour
 
     private void Start()
     {
+		cameraMouvement = GetComponent<CameraMouvement>();
 		GameManager.instance.onStateChange += () =>
 		{
 			if(GameManager.instance.state != State.INGAME)
             {
 				canShake = false;
             }
+		};
+		FeatureManager.instance.onCameraTiltedToggle += () =>
+		{
+			if (FeatureManager.instance.isCameraTilted)
+			{
+				originalPos = cameraMouvement.cameraTiltedPosition;
+			}
+			else
+			{
+				originalPos = cameraMouvement.cameraBasePosition;
+			}
 		};
 
 		originalPos = camTransform.localPosition;
