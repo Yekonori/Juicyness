@@ -125,14 +125,15 @@ public class Enemy : MonoBehaviour
 
     public void Die()
     {
-        AudioManager.instance.Play("EnemyDamaged", 1 + Random.Range(-0.5f, 0.5f));
         collider.enabled = false;
         if (FeatureManager.instance.isAnimationOn)
         {
+            AudioManager.instance.Play("EnemyDamaged", 1 + Random.Range(-0.5f, 0.5f));
             StartCoroutine(DieAnimations());
         }
         else
         {
+            AudioManager.instance.Play("EnemyDamagedNoAnim", 1 + Random.Range(-0.5f, 0.5f));
             mouvementManager.enemies.Remove(gameObject);
             mouvementManager.CheckIfNoMoreEnemies();
             spriteRenderer.enabled = false;

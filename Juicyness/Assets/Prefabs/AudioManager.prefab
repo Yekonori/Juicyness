@@ -96,7 +96,7 @@ MonoBehaviour:
     volume: 1
     priority: 0
     loop: 0
-    numberOfAudioSourceAvailable: 1
+    numberOfAudioSourceAvailable: 3
     source:
     - {fileID: 0}
   - clipName: BananaDie
@@ -142,5 +142,14 @@ MonoBehaviour:
     priority: 0
     loop: 0
     numberOfAudioSourceAvailable: 1
+    source:
+    - {fileID: 0}
+  - clipName: EnemyDamagedNoAnim
+    clip:
+    - {fileID: 8300000, guid: a2b7aad748ae2aa4eba989a8fff3c749, type: 3}
+    volume: 1
+    priority: 0
+    loop: 0
+    numberOfAudioSourceAvailable: 3
     source:
     - {fileID: 0}
