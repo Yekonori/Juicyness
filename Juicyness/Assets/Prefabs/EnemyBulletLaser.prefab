@@ -278,6 +278,8 @@ MonoBehaviour:
   isEnemyBullet: 1
   speed: -15
   trail: {fileID: 1095198254001777210}
+  baseSprite: {fileID: 0}
+  coolSprite: {fileID: 0}
 --- !u!95 &7946797470082267455
 Animator:
   serializedVersion: 3
@@ -445,6 +447,9 @@ MonoBehaviour:
   isEnemyBullet: 1
   speed: -15
   trail: {fileID: 1095198254001777210}
+  baseSprite: {fileID: 21300000, guid: a5fc4b889e3116c4d80a5ff31dcbd581, type: 3}
+  coolSprite: {fileID: -1650193144948707151, guid: c2d551a275050a5479dde8e10a36201a,
+    type: 3}
 --- !u!95 &7456129034285008859
 Animator:
   serializedVersion: 3
