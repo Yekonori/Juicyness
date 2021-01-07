@@ -95,7 +95,7 @@ public class Bullet : MonoBehaviour
         {
             Destroy(this.transform.parent.gameObject);
         }
-        if (shouldBeEaten && collision.gameObject.CompareTag("Enemy"))
+        if (shouldBeEaten && collision.GetComponent<Enemy>())
         {
             trail.enabled = false;
             collider.enabled = false;

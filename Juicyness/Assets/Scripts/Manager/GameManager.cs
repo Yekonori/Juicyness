@@ -94,7 +94,7 @@ public class GameManager : MonoBehaviour
         {
             Camera.main.GetComponent<CameraShake>().ShakeCamera(0.3f, 0.8f);
         }
-        else if (!FeatureManager.instance.isAnimationOn)
+        else if (!FeatureManager.instance.isAnimationOn && !FeatureManager.instance.isParticleEffectsOn)
         {
             ChangeState(State.LOOSE);
         }

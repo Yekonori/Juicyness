@@ -68,9 +68,14 @@ public class SpaceShipSkin : MonoBehaviour
             default:
                 break;
         }
-
-        ChangeBananaSprite();
-        StartCoroutine(DamagedSprite());
+        if (FeatureManager.instance.isAnimationOn)
+        {
+            StartCoroutine(DamagedSprite());
+        }
+        else
+        {
+            GetComponent<SpriteRenderer>().sprite = brownBanana;
+        }
     }
 
     public void ChangeBananaSprite()
@@ -106,6 +111,7 @@ public class SpaceShipSkin : MonoBehaviour
         }
 
         currentDamagedEffect = 0;
+        ChangeBananaSprite();
         currentSprite.enabled = true;
     }
 }

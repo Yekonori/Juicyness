@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class SpaceShipMouvement : MonoBehaviour
@@ -13,11 +14,12 @@ public class SpaceShipMouvement : MonoBehaviour
     private float playerWidth;
 
     [SerializeField] private SpaceShipSkin shipSkin;
-    [SerializeField]
-    private UnityEditor.Animations.AnimatorController[] bananaAnimators;
+    [SerializeField] private UnityEditor.Animations.AnimatorController[] bananaAnimators;
     private Animator animator;
 
     private GameObject enemy;
+
+    [SerializeField] private GameObject deathParticles;
 
     // Start is called before the first frame update
     void Start()
@@ -25,13 +27,18 @@ public class SpaceShipMouvement : MonoBehaviour
         GameManager.instance.SetPlayer(gameObject);
 
         lifeText.text = "Life : " + life;
-        screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
         playerWidth = GetComponent<SpriteRenderer>().bounds.size.x;
 
         shipSkin.SetBananaState(4);
         shipSkin.ChangeBananaSprite();
 
         animator = GetComponent<Animator>();
+        screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
+
+        FeatureManager.instance.onCameraTiltedToggle += () =>
+        {
+            screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
+        };
 
         FeatureManager.instance.onUIEffectsToggle += () =>
         {
@@ -104,6 +111,7 @@ public class SpaceShipMouvement : MonoBehaviour
                 life--;
                 lifeText.text = "Life : " + life;
                 UpdateLifeIcons();
+                animator.runtimeAnimatorController = bananaAnimators[3 - life];
                 if (FeatureManager.instance.isSpriteOn)
                 {
                     shipSkin.ChangeBananaState();
@@ -118,12 +126,20 @@ public class SpaceShipMouvement : MonoBehaviour
                     }
                     else
                     {
-                        Destroy(gameObject);
+                        if (FeatureManager.instance.isParticleEffectsOn)
+                        {
+                            GetComponent<SpriteRenderer>().enabled = false;
+                            deathParticles.SetActive(true);
+                            StartCoroutine(WaitForParticleAndDie());
+                        }
+                        else
+                        {
+                            Destroy(gameObject);
+                        }
                     }
                 }
                 else
                 {
-                    animator.runtimeAnimatorController = bananaAnimators[3 - life];
                     AudioManager.instance.Play("BananaDamaged", 1 + Random.Range(-0.5f, 0.5f));
                     if (FeatureManager.instance.isCameraEffectsOn)
                     {
@@ -143,5 +159,16 @@ public class SpaceShipMouvement : MonoBehaviour
     public void LooseAfterDeath()
     {
         GameManager.instance.ChangeState(State.LOOSE);
+    }
+
+    private IEnumerator WaitForParticleAndDie()
+    {
+        yield return new WaitForSeconds(0.3f);
+        GameManager.instance.ChangeState(State.LOOSE);
+    }
+
+    public void ActivateDeathParticles()
+    {
+        deathParticles.SetActive(true);
     }
 }

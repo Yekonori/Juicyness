@@ -41,12 +41,19 @@ public class Enemy : MonoBehaviour
         minShootTime = mouvementManager.minShootTime;
         maxShootTime = mouvementManager.maxShootTime;
         enemyWidth = GetComponent<SpriteRenderer>().bounds.size.x;
-        screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator.enabled = false;
         spriteRenderer.sprite = originalSprite;
         collider = GetComponent<BoxCollider2D>();
+
+        screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
+
+        FeatureManager.instance.onCameraTiltedToggle += () =>
+        {
+            screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
+        };
+
 
         FeatureManager.instance.onSpritesToggle += () =>
         {
@@ -129,7 +136,8 @@ public class Enemy : MonoBehaviour
         if (FeatureManager.instance.isAnimationOn)
         {
             AudioManager.instance.Play("EnemyDamaged", 1 + Random.Range(-0.5f, 0.5f));
-            StartCoroutine(DieAnimations());
+            animator.Play("DieAnimation");
+            //StartCoroutine(DieAnimations());
         }
         else
         {
@@ -151,12 +159,17 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public IEnumerator DieAnimations()
+    //public IEnumerator DieAnimations()
+    //{
+    //    animator.Play("DieAnimation");
+
+    //    yield return new WaitForSeconds(1.4f);
+
+        
+    //}
+
+    public void DeathAnimOver()
     {
-        animator.Play("DieAnimation");
-
-        yield return new WaitForSeconds(1.4f);
-
         mouvementManager.enemies.Remove(gameObject);
         mouvementManager.CheckIfNoMoreEnemies();
         if (FeatureManager.instance.isParticleEffectsOn)
@@ -168,6 +181,7 @@ public class Enemy : MonoBehaviour
             scoreText.GetComponent<Text>().text = "+" + enemyValue;
             scoreText.SetActive(true);
         }
+        spriteRenderer.enabled = false;
         StopAllCoroutines();
         StartCoroutine(WaitAndDestroy());
     }
