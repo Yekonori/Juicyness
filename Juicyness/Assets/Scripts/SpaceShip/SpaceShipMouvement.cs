@@ -5,13 +5,16 @@ public class SpaceShipMouvement : MonoBehaviour
 {
 
     [SerializeField] private float speed = 2;
-    [SerializeField] private int life = 3;
+    public int life = 3;
     [SerializeField] private Text lifeText;
     [SerializeField] private GameObject lifeIcons;
+
     private Vector3 screenBounds;
     private float playerWidth;
 
     [SerializeField] private SpaceShipSkin shipSkin;
+    [SerializeField]
+    private UnityEditor.Animations.AnimatorController[] bananaAnimators;
     private Animator animator;
 
     private GameObject enemy;
@@ -66,8 +69,9 @@ public class SpaceShipMouvement : MonoBehaviour
             }
             else
             {
-                animator.enabled = false;
-                shipSkin.SetBananaState(4);
+                animator.enabled = false; 
+                shipSkin.SetBananaState(3 - life);
+                shipSkin.ChangeBananaSprite();
             }
         };
     }
@@ -104,7 +108,6 @@ public class SpaceShipMouvement : MonoBehaviour
                 {
                     shipSkin.ChangeBananaState();
                 }
-
                 if (life <= 0)
                 {
                     AudioManager.instance.Play("BananaDie");
@@ -120,6 +123,7 @@ public class SpaceShipMouvement : MonoBehaviour
                 }
                 else
                 {
+                    animator.runtimeAnimatorController = bananaAnimators[3 - life];
                     AudioManager.instance.Play("BananaDamaged", 1 + Random.Range(-0.5f, 0.5f));
                     if (FeatureManager.instance.isCameraEffectsOn)
                     {
@@ -134,7 +138,6 @@ public class SpaceShipMouvement : MonoBehaviour
     private void UpdateLifeIcons()
     {
         lifeIcons.transform.GetChild(life).GetComponent<Animation>().Play();
-        //lifeIcons.transform.GetChild(life).gameObject.SetActive(false);
     }
 
     public void LooseAfterDeath()

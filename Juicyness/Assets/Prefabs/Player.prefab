@@ -4996,6 +4996,10 @@ MonoBehaviour:
   lifeText: {fileID: 0}
   lifeIcons: {fileID: 0}
   shipSkin: {fileID: 2130972445511978955}
+  bananaAnimators:
+  - {fileID: 9100000, guid: 153dca601f7d34d41917bb1352601212, type: 2}
+  - {fileID: 9100000, guid: 01be9afd2004b0b40bd12cd166fc2f31, type: 2}
+  - {fileID: 9100000, guid: 24fa0533325e25948a2b1b960db5478a, type: 2}
 --- !u!114 &7578868873071382241
 MonoBehaviour:
   m_ObjectHideFlags: 0
