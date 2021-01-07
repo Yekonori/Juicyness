@@ -60,7 +60,7 @@ MonoBehaviour:
     volume: 1
     priority: 0
     loop: 0
-    numberOfAudioSourceAvailable: 1
+    numberOfAudioSourceAvailable: 5
     source:
     - {fileID: 0}
   - clipName: Lose

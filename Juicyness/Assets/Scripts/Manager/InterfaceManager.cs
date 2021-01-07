@@ -9,6 +9,7 @@ public class InterfaceManager : MonoBehaviour
     [SerializeField] private GameObject gamePanel;
     [SerializeField] private GameObject winPanel;
     [SerializeField] private GameObject loosePanel;
+    [SerializeField] private GameObject controlPanel;
     [Header("DangerEffect")]
     [SerializeField] private Image damageEffect;
     [SerializeField] private float timeForDamageEffectToDisappear = 0.25f;
@@ -76,10 +77,22 @@ public class InterfaceManager : MonoBehaviour
                     canLerpDamagerEffect = false;
                 }
             }
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                if (controlPanel.activeSelf)
+                {
+                    GoToGame();
+                }
+                else
+                {
+                    GoToControl();
+                }
+            }
         }
     }
     private void GoToGame()
     {
+        controlPanel.SetActive(false);
         winPanel.SetActive(false);
         gamePanel.SetActive(true);
         Time.timeScale = 1;
@@ -87,14 +100,23 @@ public class InterfaceManager : MonoBehaviour
     private void GoToWin()
     {
         Time.timeScale = 0;
+        controlPanel.SetActive(false);
         gamePanel.SetActive(false);
         winPanel.SetActive(true);
     }
     private void GoToLoose()
     {
         Time.timeScale = 0;
+        controlPanel.SetActive(false);
         gamePanel.SetActive(false);
         loosePanel.SetActive(true);
+    }
+
+    private void GoToControl()
+    {
+        Time.timeScale = 0;
+        gamePanel.SetActive(false);
+        controlPanel.SetActive(true);
     }
 
     public void ActivateDamageEffect()
