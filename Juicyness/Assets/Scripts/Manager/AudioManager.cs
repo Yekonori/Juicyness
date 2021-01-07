@@ -48,6 +48,14 @@ public class AudioManager : MonoBehaviour
                 return;
             }
         }
+
+        GameManager.instance.onStateChange += () =>
+        {
+            if(GameManager.instance.state != State.INGAME)
+            {
+                Stop("Music");
+            }
+        };
     }
 
     public void Play(string name)
