@@ -374,7 +374,7 @@ MonoBehaviour:
   enemiesMouvementManager: []
   canGoDown: 1
   goDownStep: 0.2
-  numberOfLinesBeforeDeath: 10
+  numberOfLinesBeforeDeath: 20
   firstAlpha: 0.2
   firstLineOffset: 44
   spaceBetweenEnemyLines: 7
@@ -3124,6 +3124,7 @@ MonoBehaviour:
   isUIEffecstOn: 0
   isMusicOn: 0
   isSpriteOn: 0
+  isAnimationOn: 0
   cameraBasePosition: {x: 0, y: 0, z: -10}
   cameraBaseRotation: {x: 0, y: 0, z: 0}
   cameraTiltedPosition: {x: 0, y: -5.8, z: -5}
