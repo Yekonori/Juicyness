@@ -60,7 +60,7 @@ public class EnemyManager : MonoBehaviour
                 enemyMouvMan.ChangeDirection(shouldGoLeft);
             }
 
-            Debug.Log("Ajout du son de claquement des dents ici");
+            AudioManager.instance.Play("Teeth");
 
             IncreaseEnemySpeed();
             CheckDistanceWithPlayer();

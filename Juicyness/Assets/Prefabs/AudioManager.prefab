@@ -135,3 +135,12 @@ MonoBehaviour:
     numberOfAudioSourceAvailable: 1
     source:
     - {fileID: 0}
+  - clipName: Teeth
+    clip:
+    - {fileID: 8300000, guid: 8e73b64ac4d615f419882cab29ab2d6f, type: 3}
+    volume: 1
+    priority: 0
+    loop: 0
+    numberOfAudioSourceAvailable: 1
+    source:
+    - {fileID: 0}
