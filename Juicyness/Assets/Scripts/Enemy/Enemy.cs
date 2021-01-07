@@ -22,6 +22,7 @@ public class Enemy : MonoBehaviour
 
     private Animator animator;
     [SerializeField] private Sprite originalSprite;
+    [SerializeField] private Sprite coolSprite;
     private SpriteRenderer spriteRenderer;
 
     // Start is called before the first frame update
@@ -43,14 +44,28 @@ public class Enemy : MonoBehaviour
         {
             if (this)
             {
-                if (FeatureManager.instance.isSpriteOn)
+                if (!FeatureManager.instance.isSpriteOn)
+                {
+                    spriteRenderer.sprite = originalSprite;
+                }
+                else
+                {
+                    spriteRenderer.sprite = coolSprite;
+                }
+            }
+        };
+        FeatureManager.instance.onAnimationsToggle += () =>
+        {
+            if (this)
+            {
+                if (FeatureManager.instance.isAnimationOn)
                 {
                     animator.enabled = true;
                 }
                 else
                 {
                     animator.enabled = false;
-                    spriteRenderer.sprite = originalSprite;
+                    spriteRenderer.sprite = coolSprite;
                 }
             }
         };
@@ -102,13 +117,29 @@ public class Enemy : MonoBehaviour
 
     public void Die()
     {
-        StartCoroutine(DieAnimations());
+        AudioManager.instance.Play("EnemyDamaged");
+        if (FeatureManager.instance.isSpriteOn)
+        {
+            StartCoroutine(DieAnimations());
+        }
+        else
+        {
+            mouvementManager.enemies.Remove(gameObject);
+            mouvementManager.CheckIfNoMoreEnemies();
+            spriteRenderer.enabled = false;
+            if (FeatureManager.instance.isParticleEffectsOn)
+            {
+                particleExplosion.SetActive(true);
+            }
+            spriteRenderer.enabled = false;
+            StopAllCoroutines();
+            StartCoroutine(WaitAndDestroy());
+        }
     }
 
     public IEnumerator DieAnimations()
     {
         animator.Play("DieAnimation");
-        AudioManager.instance.Play("EnemyDamaged");
 
         yield return new WaitForSeconds(1.4f);
 

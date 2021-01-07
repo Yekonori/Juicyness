@@ -5,10 +5,14 @@ public class Bullet : MonoBehaviour
     [SerializeField] private bool isEnemyBullet = false;
     [SerializeField] private float speed = 3;
     [SerializeField] private TrailRenderer trail;
+    [SerializeField] private Sprite baseSprite;
+    [SerializeField] private Sprite coolSprite;
+    private SpriteRenderer spriteRenderer;
 
     // Start is called before the first frame update
     void Start()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
         trail.enabled = false;
         if (FeatureManager.instance.isParticleEffectsOn)
         {
@@ -22,6 +26,14 @@ public class Bullet : MonoBehaviour
         if (GameManager.instance.canPlay)
         {
             transform.position += Vector3.up * speed * Time.deltaTime;
+        }
+        if (FeatureManager.instance.isSpriteOn)
+        {
+            spriteRenderer.sprite = coolSprite;
+        }
+        else
+        {
+            spriteRenderer.sprite = baseSprite;
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
