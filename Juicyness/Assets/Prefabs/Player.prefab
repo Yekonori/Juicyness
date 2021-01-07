@@ -9758,7 +9758,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.0007714443, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -9769,7 +9769,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.15, y: 0.45}
+  m_Size: {x: 0.21017277, y: 0.45}
   m_EdgeRadius: 0
 --- !u!50 &7578868873071382243
 Rigidbody2D:
@@ -9813,6 +9813,10 @@ MonoBehaviour:
   - {fileID: 9100000, guid: 153dca601f7d34d41917bb1352601212, type: 2}
   - {fileID: 9100000, guid: 01be9afd2004b0b40bd12cd166fc2f31, type: 2}
   - {fileID: 9100000, guid: 24fa0533325e25948a2b1b960db5478a, type: 2}
+  controllerNames:
+  - IdleBanana
+  - IdleBananaBrown
+  - IdleBananaDead
   deathParticles: {fileID: 1775165187560209955}
 --- !u!114 &7578868873071382241
 MonoBehaviour:

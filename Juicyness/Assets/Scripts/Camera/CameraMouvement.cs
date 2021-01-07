@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
 
 public class CameraMouvement : MonoBehaviour
 {
@@ -15,9 +16,15 @@ public class CameraMouvement : MonoBehaviour
     private float positionLerpTimer = 0;
     [SerializeField] private float timeForCameraTotravel = 3;
 
+    private PostProcessLayer postProcessLayer;
+
     // Start is called before the first frame update
     void Start()
     {
+        Screen.SetResolution(1152, 864, true);
+
+        postProcessLayer = GetComponent<PostProcessLayer>();
+
         FeatureManager.instance.onCameraTiltedToggle += () =>
         {
             if (FeatureManager.instance.isCameraTilted)
@@ -31,6 +38,17 @@ public class CameraMouvement : MonoBehaviour
                 transform.position = cameraBasePosition;
                 basePosition = cameraBasePosition;
                 transform.rotation = Quaternion.Euler(cameraBaseRotation);
+            }
+        };
+        FeatureManager.instance.onCameraEffectToggle += () =>
+        {
+            if (FeatureManager.instance.isCameraEffectsOn)
+            {
+                postProcessLayer.enabled = true;
+            }
+            else
+            {
+                postProcessLayer.enabled = false;
             }
         };
         basePosition = transform.position;

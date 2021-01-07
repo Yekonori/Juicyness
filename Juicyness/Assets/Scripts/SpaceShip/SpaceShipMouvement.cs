@@ -14,7 +14,7 @@ public class SpaceShipMouvement : MonoBehaviour
     private float playerWidth;
 
     [SerializeField] private SpaceShipSkin shipSkin;
-    [SerializeField] private UnityEditor.Animations.AnimatorController[] bananaAnimators;
+    [SerializeField] private string[] controllerNames;
     private Animator animator;
 
     private GameObject enemy;
@@ -24,8 +24,6 @@ public class SpaceShipMouvement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameManager.instance.SetPlayer(gameObject);
-
         lifeText.text = "Life : " + life;
         playerWidth = GetComponent<SpriteRenderer>().bounds.size.x;
 
@@ -106,9 +104,9 @@ public class SpaceShipMouvement : MonoBehaviour
                 life--;
                 lifeText.text = "Life : " + life;
                 UpdateLifeIcons();
-                if (3 - life >= 0 && 3 - life < bananaAnimators.Length)
+                if (3 - life >= 0 && 3 - life < controllerNames.Length)
                 {
-                    animator.runtimeAnimatorController = bananaAnimators[3 - life];
+                    animator.runtimeAnimatorController = Resources.Load("Controller/" + controllerNames[3 - life]) as RuntimeAnimatorController;
                 }
                 if (FeatureManager.instance.isSpriteOn)
                 {

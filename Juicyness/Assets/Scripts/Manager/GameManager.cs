@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
 
     public bool canPlay;
 
-    [HideInInspector] public GameObject player;
+    public GameObject player;
     [HideInInspector] public float numberOfEnemyLines = 0;
 
     private void Awake()
@@ -77,12 +77,6 @@ public class GameManager : MonoBehaviour
                 Camera.main.GetComponent<CameraMouvement>().SetUpVictoryPosition();
             }
         }
-    }
-
-    public void SetPlayer(GameObject newPlayer)
-    {
-        player = newPlayer;
-        if (onPlayerAssigned != null) onPlayerAssigned.Invoke();
     }
 
     public void LooseProcess()

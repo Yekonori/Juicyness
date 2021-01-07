@@ -126,6 +126,14 @@ public class InterfaceManager : MonoBehaviour
         canLerpDamagerEffect = true;
     }
 
+    public void Quit()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
+        Application.Quit();
+    }
+
     public void ActivateDangerEffect(float t)
     {
         Color baseColor = new Color(dangerEffect.color.r, dangerEffect.color.g, dangerEffect.color.b, 0);

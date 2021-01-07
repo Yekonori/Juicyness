@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeForMusicToFade: 1.5
-  musicVolume: 0.3
+  musicVolume: 0.2
   soundEffects:
   - clipName: BananaSpawn
     clip:
