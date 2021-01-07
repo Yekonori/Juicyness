@@ -7,6 +7,7 @@ public class AudioManager : MonoBehaviour
 
     public static AudioManager instance;
     [SerializeField] private float timeForMusicToFade = 1.5f;
+    [SerializeField] private float musicVolume = 0.8f;
 
     public SoundEffect[] soundEffects;
 
@@ -130,7 +131,7 @@ public class AudioManager : MonoBehaviour
         }
         fx.source[0].clip = fx.clip[UnityEngine.Random.Range(0, fx.clip.Length)];
         StopCoroutine("GraduallyChangeMusicVolume");
-        StartCoroutine(GraduallyChangeMusicVolume(fx.source[0], 1, 0));
+        StartCoroutine(GraduallyChangeMusicVolume(fx.source[0], musicVolume, 0));
     }
 
     public void StopMusic()
@@ -142,7 +143,7 @@ public class AudioManager : MonoBehaviour
             return;
         }
         StopCoroutine("GraduallyChangeMusicVolume");
-        StartCoroutine(GraduallyChangeMusicVolume(fx.source[0], 0, 1));
+        StartCoroutine(GraduallyChangeMusicVolume(fx.source[0], 0, musicVolume));
     }
 
     private IEnumerator GraduallyChangeMusicVolume(AudioSource musicSource, float goal, float beginning)

@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeForMusicToFade: 1.5
+  musicVolume: 0.3
   soundEffects:
   - clipName: BananaSpawn
     clip:
@@ -157,6 +158,15 @@ MonoBehaviour:
     clip:
     - {fileID: 8300000, guid: acdfa3dbdc31c7e48b74fd4f3d7a1a9c, type: 3}
     volume: 0.2
+    priority: 0
+    loop: 0
+    numberOfAudioSourceAvailable: 3
+    source:
+    - {fileID: 0}
+  - clipName: EnemyPop
+    clip:
+    - {fileID: 8300000, guid: b504c05a8fb4eaf49b9eb6080f09d4fd, type: 3}
+    volume: 0.35
     priority: 0
     loop: 0
     numberOfAudioSourceAvailable: 3

@@ -164,6 +164,11 @@ public class Enemy : MonoBehaviour
         
     //}
 
+    public void PlayPop()
+    {
+        AudioManager.instance.Play("EnemyPop");
+    }
+
     public void DeathAnimOver()
     {
         mouvementManager.enemies.Remove(gameObject);

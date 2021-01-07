@@ -2793,8 +2793,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraBasePosition: {x: 0, y: 0, z: -10}
   cameraBaseRotation: {x: 0, y: 0, z: 0}
-  cameraTiltedPosition: {x: 0, y: -5.8, z: -5}
-  cameraTiltedRotation: {x: -40, y: 0, z: 0}
+  cameraTiltedPosition: {x: 0, y: -3, z: -10}
+  cameraTiltedRotation: {x: -10, y: 0, z: 0}
   timeForCameraTotravel: 3
 --- !u!1 &1716318899
 GameObject:
