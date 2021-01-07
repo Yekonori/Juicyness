@@ -28,12 +28,13 @@ public class EnemyManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameManager.instance.numberOfEnemyLines = enemiesMouvementManager.Count;
-        for(int i = 0; i < enemiesMouvementManager.Count; i++)
+        for (int i = 0; i < transform.childCount; i++)
         {
+            enemiesMouvementManager.Add(transform.GetChild(i).GetComponent<EnemyMouvementManager>()); 
             enemiesMouvementManager[i].transform.position = new Vector3(enemiesMouvementManager[i].transform.position.x, GameManager.instance.player.transform.position.y + (firstLineOffset * goDownStep), enemiesMouvementManager[i].transform.position.z);
             firstLineOffset -= spaceBetweenEnemyLines;
         }
+        GameManager.instance.numberOfEnemyLines = enemiesMouvementManager.Count;
     }
 
     // Update is called once per frame
