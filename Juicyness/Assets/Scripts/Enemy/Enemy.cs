@@ -181,10 +181,11 @@ public class Enemy : MonoBehaviour
     IEnumerator WaitAndShoot()
     {
         float waitTime = Random.Range(minShootTime, maxShootTime);
-        yield return new WaitForSeconds(waitTime);
+        yield return new WaitForSeconds(waitTime-0.5f);
+        animator.SetBool("IsShooting", true);
+        yield return new WaitForSeconds(0.5f);
         if (GameManager.instance.canPlay)
         {
-            animator.SetBool("IsShooting", true);
 
             AudioManager.instance.Play("EnemyShoot");
             Instantiate(bulletPrefab, bulletSpawner.position, Quaternion.identity);
