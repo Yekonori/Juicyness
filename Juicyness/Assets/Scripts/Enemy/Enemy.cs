@@ -18,6 +18,8 @@ public class Enemy : MonoBehaviour
     private float enemyWidth;
     private Vector3 screenBounds;
 
+    private Animator Animator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +30,8 @@ public class Enemy : MonoBehaviour
         maxShootTime = mouvementManager.maxShootTime;
         enemyWidth = GetComponent<SpriteRenderer>().bounds.size.x;
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
+
+        Animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -51,6 +55,8 @@ public class Enemy : MonoBehaviour
                 {
                     canShoot = true;
                 }
+
+                Animator.SetBool("IsShooting", false);
             }
             if (canShoot)
             {
@@ -86,6 +92,8 @@ public class Enemy : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
         if (GameManager.instance.canPlay)
         {
+            Animator.SetBool("IsShooting", true);
+
             AudioManager.instance.Play("EnemyShoot");
             Instantiate(bulletPrefab, bulletSpawner.position, Quaternion.identity);
             canCheckIfCanShoot = true;
