@@ -72,6 +72,29 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public void Play(string name, float pitch)
+    {
+        if (FeatureManager.instance.isSoundEffectOn)
+        {
+            SoundEffect fx = Array.Find(soundEffects, sound => sound.clipName == name);
+            if (fx == null)
+            {
+                Debug.Log("/!\\ Sound : " + name + "not found /!\\");
+                return;
+            }
+            foreach (AudioSource source in fx.source)
+            {
+                if (!source.isPlaying)
+                {
+                    source.pitch = pitch;
+                    source.clip = fx.clip[UnityEngine.Random.Range(0, fx.clip.Length)];
+                    source.Play();
+                    return;
+                }
+            }
+        }
+    }
+
     public void Stop(string name)
     {
         SoundEffect fx = Array.Find(soundEffects, sound => sound.clipName == name);

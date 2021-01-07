@@ -113,7 +113,7 @@ public class SpaceShipMouvement : MonoBehaviour
                 }
                 else
                 {
-                    AudioManager.instance.Play("BananaDamaged");
+                    AudioManager.instance.Play("BananaDamaged", 1 + Random.Range(-0.5f, 0.5f));
                     if (FeatureManager.instance.isCameraEffectsOn)
                     {
                         Camera.main.GetComponent<CameraShake>().ShakeCamera(0.2f, 0.1f);

@@ -38,7 +38,7 @@ public class SpaceShipShot : MonoBehaviour
                     particleObject.SetActive(false);
                     particleObject.SetActive(true);
                 }
-                AudioManager.instance.Play("BananaShoot");
+                AudioManager.instance.Play("BananaShoot", 1 + Random.Range(-0.5f, 0.5f));
                 Instantiate(bulletPrefab, bulletSpawner.position, Quaternion.identity);
                 StartCoroutine(WaitBeforeShootingAgain());
             }

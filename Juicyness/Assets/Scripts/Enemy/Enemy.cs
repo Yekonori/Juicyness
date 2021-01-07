@@ -125,7 +125,7 @@ public class Enemy : MonoBehaviour
 
     public void Die()
     {
-        AudioManager.instance.Play("EnemyDamaged");
+        AudioManager.instance.Play("EnemyDamaged", 1 + Random.Range(-0.5f, 0.5f));
         collider.enabled = false;
         if (FeatureManager.instance.isAnimationOn)
         {
