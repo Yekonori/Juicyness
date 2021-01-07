@@ -34,6 +34,13 @@ public class EnemyManager : MonoBehaviour
             enemiesMouvementManager[i].transform.position = new Vector3(enemiesMouvementManager[i].transform.position.x, GameManager.instance.player.transform.position.y + (firstLineOffset * goDownStep), enemiesMouvementManager[i].transform.position.z);
             firstLineOffset -= spaceBetweenEnemyLines;
         }
+        FeatureManager.instance.onCameraEffectToggle += () =>
+        {
+            if (FeatureManager.instance.isCameraEffectsOn)
+            {
+                CheckDistanceWithPlayer();
+            }
+        };
         GameManager.instance.numberOfEnemyLines = enemiesMouvementManager.Count;
     }
 
@@ -96,9 +103,12 @@ public class EnemyManager : MonoBehaviour
             GameManager.instance.LooseProcess();
             GameManager.instance.canPlay = false;
         }
-        if(lowest - GameManager.instance.player.transform.position.y <= numberOfLinesBeforeDeath * goDownStep)
+        if (FeatureManager.instance.isCameraEffectsOn)
         {
-            InterfaceManager.instance.ActivateDangerEffect(firstAlpha + (1 - ((lowest - GameManager.instance.player.transform.position.y) / (numberOfLinesBeforeDeath*0.2f))));
+            if (lowest - GameManager.instance.player.transform.position.y <= numberOfLinesBeforeDeath * goDownStep)
+            {
+                InterfaceManager.instance.ActivateDangerEffect(firstAlpha + (1 - ((lowest - GameManager.instance.player.transform.position.y) / (numberOfLinesBeforeDeath * 0.2f))));
+            }
         }
     }
 }

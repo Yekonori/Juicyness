@@ -47,6 +47,15 @@ public class InterfaceManager : MonoBehaviour
                 GoToLoose();
             }
         };
+
+        FeatureManager.instance.onCameraEffectToggle += () =>
+        {
+            if (!FeatureManager.instance.isCameraEffectsOn)
+            {
+                ActivateDangerEffect(0);
+            }
+        };
+
         GoToGame();
         damageEffectBaseColor = damageEffect.color;
         damageEffectfullAlphaColor = damageEffectBaseColor;

@@ -29,7 +29,6 @@ public class SpaceShipShot : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space) && canShoot)
             {
-                print("lkjnd");
                 canShoot = false;
 
                 Animator.SetBool("IsShooting", true);
