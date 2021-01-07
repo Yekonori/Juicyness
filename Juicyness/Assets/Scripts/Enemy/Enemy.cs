@@ -107,7 +107,7 @@ public class Enemy : MonoBehaviour
 
     public IEnumerator DieAnimations()
     {
-        Animator.Play("DieAnimation");
+        animator.Play("DieAnimation");
         AudioManager.instance.Play("EnemyDamaged");
 
         yield return new WaitForSeconds(1.4f);
