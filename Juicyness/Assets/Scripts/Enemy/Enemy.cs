@@ -135,13 +135,13 @@ public class Enemy : MonoBehaviour
         collider.enabled = false;
         if (FeatureManager.instance.isAnimationOn)
         {
-            AudioManager.instance.Play("EnemyDamaged", 1 + Random.Range(-0.5f, 0.5f));
+            AudioManager.instance.Play("EnemyDamaged", 1 + Random.Range(-0.2f, 0.2f));
             animator.Play("DieAnimation");
             //StartCoroutine(DieAnimations());
         }
         else
         {
-            AudioManager.instance.Play("EnemyDamagedNoAnim", 1 + Random.Range(-0.5f, 0.5f));
+            AudioManager.instance.Play("EnemyDamagedNoAnim", 1 + Random.Range(-0.2f, 0.2f));
             mouvementManager.enemies.Remove(gameObject);
             mouvementManager.CheckIfNoMoreEnemies();
             spriteRenderer.enabled = false;
