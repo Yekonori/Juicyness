@@ -239,6 +239,7 @@ MonoBehaviour:
     type: 3}
   bulletSpawner: {fileID: 7970150144431151524}
   enemyValue: 0
+  originalSprite: {fileID: 21300000, guid: 3e76ec7041ff9564f89d034cec9aa614, type: 3}
 --- !u!95 &2704433479244401504
 Animator:
   serializedVersion: 3
@@ -247,7 +248,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2883184978089465416}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: b308a8556a56cad4ba1d44e547c298a8, type: 2}
   m_CullingMode: 0
