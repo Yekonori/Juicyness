@@ -178,7 +178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnemyBullet: 1
-  speed: -15
+  speed: -5
   trail: {fileID: 5975886011138735167}
   baseSprite: {fileID: 21300000, guid: f073b983c241d9848ba4f705cc1d6d46, type: 3}
   coolSprite: {fileID: -1650193144948707151, guid: c2d551a275050a5479dde8e10a36201a,
@@ -445,7 +445,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnemyBullet: 1
-  speed: -15
+  speed: -5
   trail: {fileID: 240762777500383313}
   baseSprite: {fileID: 21300000, guid: f073b983c241d9848ba4f705cc1d6d46, type: 3}
   coolSprite: {fileID: -1650193144948707151, guid: c2d551a275050a5479dde8e10a36201a,

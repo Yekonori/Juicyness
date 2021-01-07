@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnemyBullet: 1
-  speed: -15
+  speed: -5
   trail: {fileID: -4544313675530136907}
   baseSprite: {fileID: 21300000, guid: e843bad4517573047a892106398adf1b, type: 3}
   coolSprite: {fileID: 21300000, guid: e843bad4517573047a892106398adf1b, type: 3}
