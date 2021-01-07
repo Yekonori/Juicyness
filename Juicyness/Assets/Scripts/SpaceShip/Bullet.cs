@@ -123,7 +123,8 @@ public class Bullet : MonoBehaviour
             {
                 if (FeatureManager.instance.isAnimationOn)
                 {
-                    animator.SetTrigger("isCooked"); 
+                    animator.SetTrigger("isCooked");
+                    AudioManager.instance.Play("BananaCooked");
                     StartCoroutine(WaitAndDestroy(0.8f));
                 }
                 else

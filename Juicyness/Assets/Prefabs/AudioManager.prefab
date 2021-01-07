@@ -153,3 +153,12 @@ MonoBehaviour:
     numberOfAudioSourceAvailable: 3
     source:
     - {fileID: 0}
+  - clipName: BananaCooked
+    clip:
+    - {fileID: 8300000, guid: acdfa3dbdc31c7e48b74fd4f3d7a1a9c, type: 3}
+    volume: 0.2
+    priority: 0
+    loop: 0
+    numberOfAudioSourceAvailable: 3
+    source:
+    - {fileID: 0}
