@@ -8,10 +8,15 @@ public class Bullet : MonoBehaviour
     [SerializeField] private Sprite baseSprite;
     [SerializeField] private Sprite coolSprite;
     private SpriteRenderer spriteRenderer;
+    private bool shouldBeEaten = false;
+    private CapsuleCollider2D collider;
+    private bool isInSkull = false;
+    private Transform bananaEater;
 
     // Start is called before the first frame update
     void Start()
     {
+        collider = GetComponent<CapsuleCollider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         trail.enabled = false;
         if (FeatureManager.instance.isParticleEffectsOn)
@@ -26,7 +31,12 @@ public class Bullet : MonoBehaviour
         if (GameManager.instance.canPlay)
         {
             transform.position += Vector3.up * speed * Time.deltaTime;
+            if (isInSkull && transform.position.y > bananaEater.position.y + 0.35f)
+            {
+                Destroy(this.gameObject);
+            }
         }
+
         if (FeatureManager.instance.isSpriteOn)
         {
             spriteRenderer.sprite = coolSprite;
@@ -34,6 +44,18 @@ public class Bullet : MonoBehaviour
         else
         {
             spriteRenderer.sprite = baseSprite;
+        }
+
+        if (!isEnemyBullet)
+        {
+            if (FeatureManager.instance.isAnimationOn)
+            {
+                shouldBeEaten = true;
+            }
+            else
+            {
+                shouldBeEaten = false;
+            }
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -62,10 +84,18 @@ public class Bullet : MonoBehaviour
                 return;
             }
         }
-
         if (isEnemyBullet)
         {
             Destroy(this.transform.parent.gameObject);
+        }
+        if (shouldBeEaten && collision.gameObject.CompareTag("Enemy"))
+        {
+            trail.enabled = false;
+            collider.enabled = false;
+            bananaEater = collision.GetComponent<Enemy>().bananaEater;
+            transform.position = bananaEater.position;
+            speed = 2f;
+            isInSkull = true;
         }
         else
         {

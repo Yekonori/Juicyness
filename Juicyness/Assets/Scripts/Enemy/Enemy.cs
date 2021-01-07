@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
 
     private EnemyMouvementManager mouvementManager;
     [HideInInspector] public float enemyValue;
+    public Transform bananaEater;
 
     private float minShootTime = 0;
     private float maxShootTime = 0;
@@ -25,6 +26,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] private Sprite coolSprite;
     private SpriteRenderer spriteRenderer;
 
+    private BoxCollider2D collider;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +42,7 @@ public class Enemy : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator.enabled = false;
         spriteRenderer.sprite = originalSprite;
+        collider = GetComponent<BoxCollider2D>();
 
         FeatureManager.instance.onSpritesToggle += () =>
         {
@@ -118,8 +122,9 @@ public class Enemy : MonoBehaviour
     public void Die()
     {
         AudioManager.instance.Play("EnemyDamaged");
-        if (FeatureManager.instance.isSpriteOn)
+        if (FeatureManager.instance.isAnimationOn)
         {
+            collider.enabled = false;
             StartCoroutine(DieAnimations());
         }
         else
