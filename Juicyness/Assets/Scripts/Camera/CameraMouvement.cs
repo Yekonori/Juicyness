@@ -18,6 +18,8 @@ public class CameraMouvement : MonoBehaviour
 
     private PostProcessLayer postProcessLayer;
 
+    [SerializeField] private Color whenTiltedColor;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -51,6 +53,19 @@ public class CameraMouvement : MonoBehaviour
                 postProcessLayer.enabled = false;
             }
         };
+
+        FeatureManager.instance.onUIEffectsToggle += () =>
+        {
+            if (FeatureManager.instance.isUIEffecstOn)
+            {
+                GetComponent<Camera>().backgroundColor = whenTiltedColor;
+            }
+            else
+            {
+                GetComponent<Camera>().backgroundColor = Color.black;
+            }
+        };
+
         basePosition = transform.position;
     }
 
