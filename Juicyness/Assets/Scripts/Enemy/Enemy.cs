@@ -137,6 +137,10 @@ public class Enemy : MonoBehaviour
         }
         else
         {
+            if (FeatureManager.instance.isUIEffecstOn)
+            {
+                ScoreManager.instance.ChangeScore(enemyValue);
+            }
             if (FeatureManager.instance.isCameraEffectsOn)
             {
                 InterfaceManager.instance.ActivateKillEffect();
@@ -176,6 +180,10 @@ public class Enemy : MonoBehaviour
 
     public void DeathAnimOver()
     {
+        if (FeatureManager.instance.isUIEffecstOn)
+        {
+            ScoreManager.instance.ChangeScore(enemyValue);
+        }
         if (FeatureManager.instance.isCameraEffectsOn)
         {
             InterfaceManager.instance.ActivateKillEffect();

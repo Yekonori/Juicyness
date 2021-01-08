@@ -152,6 +152,7 @@ public class InterfaceManager : MonoBehaviour
 
     public void ActivateKillEffect()
     {
+        Camera.main.GetComponent<CameraShake>().ShakeCamera(0.2f, 0.1f);
         killEffectLerpTimer = 0;
         killEffect.color = killEffectfullAlphaColor;
         canLerpKillEffect = true;

@@ -83,7 +83,6 @@ public class Bullet : MonoBehaviour
 
                 if (enemyCollided != null)
                 {
-                    ScoreManager.instance.ChangeScore(collision.GetComponent<Enemy>().enemyValue);
                     collision.GetComponent<Enemy>().Die();
                 }
                 else
