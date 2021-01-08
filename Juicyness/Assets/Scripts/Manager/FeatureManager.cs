@@ -100,6 +100,17 @@ public class FeatureManager : MonoBehaviour
                         print("Eigth feature : Tilted Camera");
                         ToggleCameraTiltingEffect();
                         break;
+                    case "9":
+                    case "ç":
+                        ToggleSprites();
+                        ToggleSoundEffect();
+                        ToggleAnimations();
+                        ToggleParticleEffects();
+                        ToggleMusic();
+                        ToggleCameraEffects();
+                        ToggleUIEffects();
+                        ToggleCameraTiltingEffect();
+                        break;
                     default:
                         break;
                 }
