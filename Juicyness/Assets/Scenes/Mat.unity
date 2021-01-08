@@ -3291,7 +3291,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraBasePosition: {x: 0, y: 0, z: -10}
   cameraBaseRotation: {x: 0, y: 0, z: 0}
-  cameraTiltedPosition: {x: 0, y: -3, z: -10}
+  cameraTiltedPosition: {x: 0, y: -2, z: -10}
   cameraTiltedRotation: {x: -10, y: 0, z: 0}
   timeForCameraTotravel: 3
 --- !u!114 &1706269963
@@ -3467,7 +3467,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 59089a9c780e38343a88be8af07c6432, type: 2}
+  - {fileID: 2100000, guid: 44b538f268c244940abe8c5640d9eec5, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -3488,7 +3488,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 500
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -3764,8 +3764,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.5
-      minScalar: 0.1
+      scalar: 0.8
+      minScalar: 0.4
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -8480,7 +8480,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 500
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -8756,8 +8756,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.35
-      minScalar: 0.2
+      scalar: 0.4
+      minScalar: 0.3
       maxCurve:
         serializedVersion: 2
         m_Curve:

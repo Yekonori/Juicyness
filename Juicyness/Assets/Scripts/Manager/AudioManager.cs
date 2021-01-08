@@ -134,6 +134,17 @@ public class AudioManager : MonoBehaviour
         StartCoroutine(GraduallyChangeMusicVolume(fx.source[0], musicVolume, 0));
     }
 
+    public void ChangeMusicPitch(float pitchToAdd)
+    {
+        SoundEffect fx = Array.Find(soundEffects, sound => sound.clipName == "Music");
+        if (fx == null)
+        {
+            Debug.Log("/!\\ Sound : Music not found /!\\");
+            return;
+        }
+        fx.source[0].pitch += pitchToAdd;
+    }
+
     public void StopMusic()
     {
         SoundEffect fx = Array.Find(soundEffects, sound => sound.clipName == "Music");
