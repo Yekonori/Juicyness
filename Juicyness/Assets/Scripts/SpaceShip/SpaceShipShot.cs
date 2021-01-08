@@ -15,11 +15,14 @@ public class SpaceShipShot : MonoBehaviour
     [SerializeField] private GameObject particleObject;
 
     private Animator Animator;
+    private Vector3 originalPosition;
+    [SerializeField] private float shootRecoil = 0.25f;
 
     // Start is called before the first frame update
     void Start()
     {
         Animator = GetComponent<Animator>();
+        originalPosition = transform.position;
     }
 
     // Update is called once per frame
@@ -40,9 +43,22 @@ public class SpaceShipShot : MonoBehaviour
                 }
                 AudioManager.instance.Play("BananaShoot", 1 + Random.Range(-0.5f, 0.5f));
                 Instantiate(bulletPrefab, bulletSpawner.position, Quaternion.identity);
+                if (FeatureManager.instance.isAnimationOn)
+                {
+                    transform.position = new Vector3(transform.position.x, transform.position.y - shootRecoil, transform.position.z);
+                    StartCoroutine(RecoilCoroutine());
+                }
                 StartCoroutine(WaitBeforeShootingAgain());
             }
         }
+    }
+
+    IEnumerator RecoilCoroutine()
+    {
+        yield return new WaitForSeconds(0.1f);
+        transform.position = new Vector3(transform.position.x, originalPosition.y + (shootRecoil / 2), transform.position.z);
+        yield return new WaitForSeconds(Mathf.Clamp(0.2f, 0, 15));
+        transform.position = new Vector3(transform.position.x, originalPosition.y, transform.position.z);
     }
 
     IEnumerator WaitBeforeShootingAgain()

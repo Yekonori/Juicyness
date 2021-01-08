@@ -61,7 +61,7 @@ public class EnemyManager : MonoBehaviour
             }
 
             AudioManager.instance.Play("Teeth");
-
+            AudioManager.instance.ChangeMusicPitch(0.01f);
             IncreaseEnemySpeed();
             CheckDistanceWithPlayer();
             StartCoroutine(WaitBeforeGoingDownAgain());

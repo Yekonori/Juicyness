@@ -76,7 +76,7 @@ MonoBehaviour:
   - clipName: EnemyDamaged
     clip:
     - {fileID: 8300000, guid: 24efe234dda43c147ab45d2ce6d2f948, type: 3}
-    volume: 0.1
+    volume: 0.2
     priority: 0
     loop: 0
     numberOfAudioSourceAvailable: 3
@@ -121,7 +121,7 @@ MonoBehaviour:
   - clipName: Win
     clip:
     - {fileID: 8300000, guid: cd2edc13e5df59948be727db387b16da, type: 3}
-    volume: 1
+    volume: 0.2
     priority: 0
     loop: 0
     numberOfAudioSourceAvailable: 1
