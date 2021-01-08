@@ -78,7 +78,7 @@ public class CameraMouvement : MonoBehaviour
         }
         else
         {
-            goalPosition = new Vector3(GameManager.instance.player.transform.position.x, cameraTiltedPosition.y - 2.5f, GameManager.instance.player.transform.position.z - 2);
+            goalPosition = new Vector3(GameManager.instance.player.transform.position.x, cameraTiltedPosition.y - 2f, GameManager.instance.player.transform.position.z - 2);
         }
     }
 }

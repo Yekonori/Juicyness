@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
 
     private bool canPlayAgain = false;
 
+    [SerializeField] private GameObject confettiParticle;
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -85,6 +87,10 @@ public class GameManager : MonoBehaviour
             InterfaceManager.instance.DeactivateEffects();
             AudioManager.instance.Stop("Music");
             AudioManager.instance.Play("Win");
+            if (FeatureManager.instance.isParticleEffectsOn)
+            {
+                confettiParticle.SetActive(true);
+            }
             if (!FeatureManager.instance.isCameraEffectsOn)
             {
                 ChangeState(State.WIN);
