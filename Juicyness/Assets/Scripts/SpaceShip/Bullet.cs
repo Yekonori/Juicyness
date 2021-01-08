@@ -125,7 +125,7 @@ public class Bullet : MonoBehaviour
                 {
                     animator.SetTrigger("isCooked");
                     AudioManager.instance.Play("BananaCooked");
-                    StartCoroutine(WaitAndDestroy(0.8f));
+                    StartCoroutine(WaitAndDestroy(0.6f));
                 }
                 else
                 {
