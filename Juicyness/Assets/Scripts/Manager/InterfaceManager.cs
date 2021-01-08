@@ -27,6 +27,7 @@ public class InterfaceManager : MonoBehaviour
     private bool canLerpKillEffect = false;
     [Header("DangerEffect")]
     [SerializeField] private Image dangerEffect;
+    [SerializeField] private GameObject background;
 
     private void Awake()
     {
@@ -62,6 +63,18 @@ public class InterfaceManager : MonoBehaviour
             if (!FeatureManager.instance.isCameraEffectsOn)
             {
                 ActivateDangerEffect(0);
+            }
+        };
+
+        FeatureManager.instance.onUIEffectsToggle += () =>
+        {
+            if (FeatureManager.instance.isUIEffecstOn)
+            {
+                background.SetActive(true);
+            }
+            else
+            {
+                background.SetActive(false);
             }
         };
 
