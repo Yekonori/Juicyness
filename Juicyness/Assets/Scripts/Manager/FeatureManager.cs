@@ -102,14 +102,26 @@ public class FeatureManager : MonoBehaviour
                         break;
                     case "9":
                     case "ç":
-                        ToggleSprites();
-                        ToggleSoundEffect();
-                        ToggleAnimations();
-                        ToggleParticleEffects();
-                        ToggleMusic();
-                        ToggleCameraEffects();
-                        ToggleUIEffects();
-                        ToggleCameraTiltingEffect();
+                        isSpriteOn = true;
+                        if (onSpritesToggle != null) onSpritesToggle.Invoke();
+
+                        isSoundEffectOn = true;
+
+                        isAnimationOn = true;
+                        if (onAnimationsToggle != null) onAnimationsToggle.Invoke();
+
+                        isParticleEffectsOn = true;
+
+                        AudioManager.instance.PlayMusic();
+
+                        isCameraEffectsOn = true;
+                        if (onCameraEffectToggle != null) onCameraEffectToggle.Invoke();
+
+                        isUIEffecstOn = true;
+                        if (onUIEffectsToggle != null) onUIEffectsToggle.Invoke();
+
+                        isCameraTilted = true;
+                        if (onCameraTiltedToggle != null) onCameraTiltedToggle.Invoke();
                         break;
                     default:
                         break;

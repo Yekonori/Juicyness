@@ -38,7 +38,7 @@ public class ScoreManager : MonoBehaviour
         }
         else
         {
-            scoreText.color = Color.black;
+            scoreText.color = Color.white;
         }
     }
 
