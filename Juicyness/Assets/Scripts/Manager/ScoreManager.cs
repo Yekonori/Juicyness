@@ -9,6 +9,7 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private Text scoreText;
     private float score = 0;
     private Animation scoreAnimation;
+    [SerializeField] private Color scoreColor;
 
     private void Awake()
     {
@@ -31,7 +32,14 @@ public class ScoreManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (FeatureManager.instance.isUIEffecstOn)
+        {
+            scoreText.color = scoreColor;
+        }
+        else
+        {
+            scoreText.color = Color.black;
+        }
     }
 
     public void ChangeScore(float scoreToAdd)
